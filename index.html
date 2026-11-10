@@ -1,0 +1,1561 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cumbre Norte Propiedades</title>
+<meta name="description" content="Corretaje de propiedades en Santiago oriente y el litoral central, con planos, asoleamiento medido y tasación con comparables reales.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=Geist:wght@400..600&family=Geist+Mono:wght@400..500&display=swap">
+<style>
+/* Layout: hero cinematográfico a sangre que se funde con el papel; debajo, grilla de 12 columnas
+   con filas de altura común. Versión clara fija: papel casi blanco, grafito, un solo acento intercambiable. */
+:root{
+  color-scheme:light;
+  --bg:#F6F6F3;          /* papel */
+  --surface:#FFFFFF;
+  --ink:#121518;         /* grafito */
+  --muted:#5D636A;
+  --line:#E3E5E1;
+  --line-2:#CDD0CB;
+  --accent:#121518;      /* grafito: acento elegido */
+  --accent-soft:#E8E9E6;
+  --accent-ink:#FFFFFF;
+  --danger:#B42318;
+  --ok:#1E6B45;
+  --glass:rgba(255,255,255,.72);
+  --foot-bg:#121518;
+  --foot-fg:#F1F1EE;
+  --shadow:0 1px 2px rgba(18,21,24,.05),0 18px 40px -18px rgba(18,21,24,.22);
+
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-mono:"Geist Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+
+  --fs-hero:clamp(2.6rem,min(5.9vw,10.5vh),6.25rem);
+  --fs-h2:clamp(2rem,3.8vw,3.25rem);
+  --fs-small:.875rem;
+  --fs-mono:.8125rem;
+
+  --wrap:1280px;
+  --sec-pad:clamp(72px,10vw,136px);
+  --r:6px;
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1rem;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:70;background:var(--bg)}
+img{display:block;max-width:100%}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:900px){.wrap{padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px))}}
+.mono{font-family:var(--f-mono);font-size:var(--fs-mono);letter-spacing:.01em;font-variant-numeric:tabular-nums}
+.eyebrow{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+h1,h2,h3{font-family:var(--f-display);font-weight:640;margin:0;text-wrap:balance}
+h2{font-size:var(--fs-h2);line-height:1;letter-spacing:-.025em;font-variation-settings:"wdth" 114}
+p{margin:0}
+
+/* ---------- Header ---------- */
+.site-header{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:60;border-bottom:1px solid transparent;transition:background-color .35s,border-color .35s}
+.site-header.scrolled{background:var(--glass);backdrop-filter:saturate(1.4) blur(16px);-webkit-backdrop-filter:saturate(1.4) blur(16px);border-bottom-color:var(--line)}
+.site-header .wrap{display:flex;align-items:center;gap:24px;min-height:72px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+.brand svg{width:30px;height:30px;color:currentColor}
+.brand-name{font-family:var(--f-display);font-weight:700;font-size:1.05rem;letter-spacing:-.01em;font-variation-settings:"wdth" 118;line-height:1}
+.brand-name small{display:block;font-family:var(--f-mono);font-weight:400;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;opacity:.65;margin-top:3px}
+.nav{display:flex;gap:2px;margin-left:auto}
+.nav a{text-decoration:none;font-size:.9375rem;padding:8px 13px;border-radius:999px;color:var(--ink);opacity:.78;transition:opacity .2s,background-color .2s}
+.nav a{white-space:nowrap}
+@media (max-width:1100px){.nav a{padding:8px 9px;font-size:.875rem}.site-header .wrap{gap:16px}}
+.nav a:hover{opacity:1;background:color-mix(in srgb,var(--surface) 70%,transparent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:999px;border:1px solid transparent;
+  font-weight:550;font-size:.9375rem;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background-color .2s,color .2s,border-color .2s,transform .2s var(--ease)}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{background:color-mix(in srgb,var(--accent) 84%,#000)}
+.btn-primary:active{transform:translateY(1px)}
+.btn-ghost{border-color:var(--line-2);background:transparent;color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-light{background:color-mix(in srgb,var(--surface) 82%,transparent);color:var(--ink);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.btn-light:hover{background:var(--surface)}
+.btn svg{width:14px;height:14px}
+.menu-btn{display:none;margin-left:auto;width:44px;height:44px;border-radius:999px;border:1px solid var(--line-2);background:color-mix(in srgb,var(--surface) 70%,transparent);cursor:pointer;align-items:center;justify-content:center}
+.menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:16px;height:1.5px;background:var(--ink);position:relative;transition:transform .25s var(--ease)}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0}
+.menu-btn span::before{top:-5px}.menu-btn span::after{top:5px}
+.menu-btn[aria-expanded="true"] span{background:transparent}
+.menu-btn[aria-expanded="true"] span::before{transform:translateY(5px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span::after{transform:translateY(-5px) rotate(-45deg)}
+
+/* ---------- Hero cinematográfico ---------- */
+.hero{position:relative;height:150vh}
+.hero.static{height:auto}
+.hero-stage{position:sticky;top:0;height:100vh;height:100svh;min-height:600px;overflow:hidden;background:var(--bg)}
+.hero.static .hero-stage{position:relative}
+.hero-poster,.hero-canvas{position:absolute;inset:0;width:100%;height:100%}
+.hero-poster{object-fit:cover;object-position:62% 50%;transform-origin:62% 50%}
+.hero-canvas{opacity:0;transition:opacity .6s;transform-origin:62% 50%}
+.hero-canvas.ready{opacity:1}
+@keyframes settle{from{transform:scale(1.06)}to{transform:scale(1)}}
+.hero-veil{position:absolute;inset:0;pointer-events:none;background:
+  linear-gradient(180deg,color-mix(in srgb,var(--bg) 70%,transparent) 0%,transparent 20%),
+  linear-gradient(102deg,color-mix(in srgb,var(--bg) 92%,transparent) 0%,color-mix(in srgb,var(--bg) 66%,transparent) 32%,transparent 58%),
+  linear-gradient(0deg,var(--bg) 0.0%,color-mix(in srgb,var(--bg) 99.7%,transparent) 3.3%,color-mix(in srgb,var(--bg) 97.7%,transparent) 6.6%,color-mix(in srgb,var(--bg) 93.1%,transparent) 9.9%,color-mix(in srgb,var(--bg) 85.5%,transparent) 13.1%,color-mix(in srgb,var(--bg) 75.4%,transparent) 16.4%,color-mix(in srgb,var(--bg) 63.2%,transparent) 19.7%,color-mix(in srgb,var(--bg) 50.0%,transparent) 23.0%,color-mix(in srgb,var(--bg) 36.8%,transparent) 26.3%,color-mix(in srgb,var(--bg) 24.6%,transparent) 29.6%,color-mix(in srgb,var(--bg) 14.5%,transparent) 32.9%,color-mix(in srgb,var(--bg) 6.9%,transparent) 36.1%,color-mix(in srgb,var(--bg) 2.3%,transparent) 39.4%,color-mix(in srgb,var(--bg) 0.3%,transparent) 42.7%,transparent 46.0%)}
+.hero-inner{position:relative;height:100%;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:1fr;gap:24px;
+  padding-top:clamp(128px,21vh,210px);padding-bottom:clamp(150px,20vh,200px)}
+.hero-copy{grid-column:1 / span 8;grid-row:1;align-self:start;min-width:0;will-change:transform,opacity}
+.hero h1{font-size:var(--fs-hero);line-height:.98;letter-spacing:-.035em;font-weight:660;font-variation-settings:"wdth" 120;margin-top:22px}
+.hero h1 .l{display:block;overflow:hidden;padding-bottom:.06em}
+@media (min-width:900px){.hero h1 .l{white-space:nowrap}}
+.hero h1 .l > span{display:block;animation:rise 1.1s var(--ease) both}
+.hero h1 .l:nth-child(2) > span{animation-delay:.12s;color:var(--accent)}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+.hero-lead{max-width:40ch;font-size:clamp(1.0625rem,1.35vw,1.3125rem);line-height:1.55;font-weight:500;color:var(--ink);margin-top:clamp(24px,3.6vh,36px);
+  text-shadow:0 0 14px color-mix(in srgb,var(--bg) 95%,transparent),0 0 28px color-mix(in srgb,var(--bg) 80%,transparent);animation:fadeup 1s .35s var(--ease) both}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(28px,4.4vh,44px);animation:fadeup 1s .45s var(--ease) both}
+@keyframes fadeup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero-foot{position:absolute;left:0;right:0;bottom:clamp(112px,14vh,140px);pointer-events:none}
+.hero-foot .wrap{display:flex;justify-content:flex-end;align-items:center;gap:16px}
+.hero-copy .hero-actions{position:relative;z-index:1}
+.scroll-cue{display:flex;align-items:center;gap:12px;color:var(--muted)}
+.scroll-cue .track{width:120px;height:2px;background:var(--line-2);border-radius:2px;overflow:hidden}
+.scroll-cue .track i{display:block;height:100%;width:100%;background:var(--ink);transform-origin:left;transform:scaleX(0)}
+.link-arrow{display:inline-flex;align-items:center;gap:6px;font-weight:550;font-size:.9375rem;text-decoration:none;color:var(--accent);border-bottom:1px solid currentColor;padding-bottom:1px;white-space:nowrap}
+.link-arrow svg{width:12px;height:12px;transition:transform .2s var(--ease)}
+.link-arrow:hover svg{transform:translate(2px,-2px)}
+
+/* Buscador flotante que se une al hero */
+.search-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 32px;margin-bottom:clamp(16px,2vw,22px)}
+.search-head h2{font-size:clamp(1.6rem,2.8vw,2.375rem);letter-spacing:-.025em}
+.search-head p{color:var(--muted);max-width:44ch}
+
+.search-band{position:relative;z-index:5;margin-top:-88px}
+.search{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:var(--shadow);
+  display:grid;grid-template-columns:auto 1.3fr 1fr 1fr auto;gap:12px;align-items:end}
+.segmented{display:inline-flex;padding:3px;border-radius:999px;background:var(--bg);border:1px solid var(--line);width:max-content;align-self:end}
+.segmented button{border:0;background:transparent;padding:8px 16px;border-radius:999px;font-size:.875rem;font-weight:550;color:var(--muted);cursor:pointer;min-height:38px;transition:background-color .2s,color .2s}
+.segmented button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.segmented button:not([aria-pressed="true"]):hover{color:var(--ink)}
+.field{display:grid;gap:6px;min-width:0}
+.field label{font-family:var(--f-mono);font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.control{width:100%;min-height:46px;padding:0 12px;border-radius:var(--r);border:1px solid var(--line);background:var(--bg);font-size:.9375rem;transition:border-color .2s,box-shadow .2s}
+select.control{appearance:none;-webkit-appearance:none;padding-right:34px;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);
+  background-position:calc(100% - 17px) 20px,calc(100% - 12px) 20px;background-size:5px 5px;background-repeat:no-repeat}
+.control:hover{border-color:var(--line-2)}
+.control:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 20%,transparent)}
+.search-status{font-size:var(--fs-small);color:var(--muted);min-height:1.5em;margin-top:10px;padding-left:6px}
+
+/* ---------- Secciones ---------- */
+section.block{padding-block:var(--sec-pad)}
+.sec-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end;margin-bottom:clamp(32px,4vw,56px)}
+.sec-head .l{grid-column:1 / span 7;min-width:0}
+.sec-head .r{grid-column:9 / span 4;color:var(--muted);min-width:0}
+.sec-head h2{margin-top:14px}
+.band{background:var(--surface);border-block:1px solid var(--line)}
+
+/* Revelado por scroll: solo se arma para elementos que están fuera de pantalla al cargar */
+[data-reveal]{transition:opacity .9s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0s)}
+[data-reveal].pre{opacity:0;transform:translateY(32px)}
+
+/* Propiedades: filas de altura común para que la información quede alineada */
+.filters{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:28px}
+.count{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(36px,4vw,56px) clamp(16px,2vw,28px)}
+.card{grid-column:span 6;display:grid;grid-template-rows:auto 1fr;min-width:0;background:var(--surface);border-radius:22px;padding:10px;
+  box-shadow:0 1px 2px rgba(18,21,24,.04),0 22px 44px -30px rgba(18,21,24,.28);transition:box-shadow .35s var(--ease),transform .35s var(--ease)}
+.card:hover{box-shadow:0 1px 2px rgba(18,21,24,.05),0 30px 60px -30px rgba(18,21,24,.34)}
+.card.w7{grid-column:span 7}.card.w5{grid-column:span 5}.card.w12{grid-column:span 12}
+.card-media{position:relative;border-radius:15px;overflow:hidden;height:clamp(280px,29vw,440px);background:var(--line);max-width:100%}
+.card-media img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease),clip-path 1.1s var(--ease);clip-path:inset(0 0 0 0)}
+.card.pre .card-media img{clip-path:inset(14% 0 0 0);transform:scale(1.1)}
+.card:hover .card-media img{transform:scale(1.04)}
+.tag{position:absolute;left:14px;top:14px;font-family:var(--f-mono);font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border-radius:999px;
+  background:var(--glass);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.fav{position:absolute;right:14px;top:14px;width:42px;height:42px;border-radius:999px;border:0;display:grid;place-items:center;cursor:pointer;
+  background:color-mix(in srgb,var(--ink) 38%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;transition:background-color .2s}
+.fav:hover{background:color-mix(in srgb,var(--ink) 60%,transparent)}
+.fav:active{background:color-mix(in srgb,var(--ink) 70%,transparent)}
+.fav svg{display:block;width:20px;height:20px;transform-origin:50% 50%}
+.fav.pop svg{animation:favpop .38s var(--ease)}
+@keyframes favpop{0%{transform:scale(1)}40%{transform:scale(1.28)}100%{transform:scale(1)}}
+.fav .on{display:none}
+.fav[aria-pressed="true"]{color:#fff;background:var(--accent)}
+.fav[aria-pressed="true"] .on{display:block}.fav[aria-pressed="true"] .off{display:none}
+
+/* Información de la tarjeta: título y orientación, ubicación, características, precio y acción */
+.card-info{display:grid;align-content:start;padding:20px 14px 10px}
+/* Subgrid: título, ubicación, características y precio comparten líneas con la tarjeta vecina de la fila */
+@supports (grid-template-rows:subgrid){
+  .cards{row-gap:0}
+  .card{grid-row:span 5;grid-template-rows:subgrid;row-gap:0;margin-bottom:clamp(36px,4vw,56px)}
+  .card-info{grid-row:span 4;grid-template-rows:subgrid;row-gap:0}
+  .ci-top{align-items:start}
+}
+.card-info svg{width:20px;height:20px;flex:none}
+.ci-top{display:flex;justify-content:space-between;align-items:center;gap:14px}
+.ci-top h3{font-size:clamp(1.2rem,1.6vw,1.4rem);letter-spacing:-.015em;font-variation-settings:"wdth" 110;line-height:1.2;min-width:0}
+.chip{display:inline-flex;align-items:center;gap:6px;flex:none;padding:5px 10px 5px 8px;border-radius:999px;background:var(--bg);border:1px solid var(--line);
+  font-family:var(--f-mono);font-size:.75rem;font-weight:500;color:var(--ink)}
+.chip svg{width:16px;height:16px;color:var(--accent)}
+.ci-loc{display:flex;align-items:center;gap:8px;margin-top:8px;color:var(--muted);font-size:.9375rem;min-width:0}
+.ci-loc svg{color:var(--muted)}
+.ci-loc > span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.ci-loc .sep{margin:0 .45em;opacity:.6}
+.ci-specs{list-style:none;margin:16px 0 0;padding:14px 0;border-block:1px solid var(--line);display:grid;grid-template-columns:repeat(3,auto);justify-content:space-between;align-items:center}
+.ci-specs li{display:flex;align-items:center;gap:9px;font-size:.9375rem;color:var(--muted);white-space:nowrap;padding:0 clamp(10px,1.4vw,20px)}
+.ci-specs li:first-child{padding-left:0}
+.ci-specs li:last-child{padding-right:0}
+.ci-specs li + li{border-left:1px solid var(--line)}
+.ci-specs svg{width:22px;height:22px;color:color-mix(in srgb,var(--ink) 72%,transparent)}
+.ci-specs b{color:var(--ink);font-weight:600}
+.ci-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 16px;margin-top:16px}
+.ci-price{display:grid;line-height:1.1}
+.ci-price span{font-family:var(--f-display);font-weight:680;font-size:clamp(1.45rem,2vw,1.75rem);letter-spacing:-.02em;font-variation-settings:"wdth" 108;font-variant-numeric:tabular-nums}
+.ci-price small{font-family:var(--f-mono);font-size:.75rem;color:var(--muted);margin-top:3px}
+.btn-dark{background:var(--ink);color:var(--bg);min-height:50px;padding:0 18px 0 20px;gap:10px}
+.btn-dark:hover{background:color-mix(in srgb,var(--ink) 86%,var(--accent))}
+.btn-dark svg{width:18px;height:18px}
+.btn-dark .chev{width:16px;height:16px;transition:transform .2s var(--ease)}
+.btn-dark:hover .chev{transform:translateX(2px)}
+@media (max-width:1100px){.ci-specs li{font-size:.875rem;gap:7px}.ci-specs svg{width:20px;height:20px}}
+.ci-specs i{font-style:normal}.ci-specs .sh{display:none}
+@media (max-width:600px){.ci-specs .lg{display:none}.ci-specs .sh{display:inline}.ci-specs li{padding:0 10px;gap:7px}.ci-specs svg{width:19px;height:19px}}
+.card[hidden]{display:none}
+
+/* Ficha */
+.ficha-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(20px,3vw,48px)}
+.gallery{grid-column:1 / span 7;display:grid;gap:12px;min-width:0}
+.gallery-main{border-radius:var(--r);overflow:hidden;aspect-ratio:3/2;background:var(--line);max-width:100%}
+.gallery-main img{width:100%;height:100%;object-fit:cover;transition:opacity .35s ease}
+.thumbs{display:flex;gap:10px}
+.thumb{flex:0 0 auto;width:104px;aspect-ratio:4/3;border-radius:4px;overflow:hidden;padding:0;border:2px solid transparent;cursor:pointer;background:var(--line);opacity:.65;transition:opacity .2s,border-color .2s}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb:hover{opacity:1}
+.thumb[aria-pressed="true"]{border-color:var(--accent);opacity:1}
+.ficha-info{grid-column:8 / span 5;display:flex;flex-direction:column;gap:24px;min-width:0}
+.ficha-price{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.ficha-price .uf{font-family:var(--f-display);font-size:clamp(2.2rem,3.6vw,3rem);font-weight:660;letter-spacing:-.025em;font-variation-settings:"wdth" 112;font-variant-numeric:tabular-nums}
+.ficha-price .mono{color:var(--muted)}
+.hint{color:var(--muted);font-size:.8125rem}
+.spec-table{width:100%;border-collapse:collapse}
+.spec-table th,.spec-table td{padding:11px 0;border-bottom:1px solid var(--line);text-align:left;font-weight:400;vertical-align:baseline}
+.spec-table th{color:var(--muted);font-size:var(--fs-small);width:52%}
+.spec-table td{font-family:var(--f-mono);font-size:.875rem;text-align:right;font-variant-numeric:tabular-nums}
+.ficha-actions{display:flex;flex-wrap:wrap;gap:10px}
+
+/* Lámina de plano */
+.sheet{margin-top:var(--sec-pad);padding-top:var(--sec-pad);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(20px,3vw,40px);align-items:stretch}
+.sheet-plan{grid-column:1 / span 7;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(14px,2vw,24px);min-width:0;
+  display:flex;flex-direction:column}
+.sheet-side{grid-column:8 / span 5;display:grid;grid-template-rows:auto 1fr;gap:clamp(20px,3vw,32px);min-width:0}
+.sheet-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.sheet-head h3{font-size:1rem;font-variation-settings:"wdth" 110}
+.svg-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.sheet-plan .svg-scroll{flex:1;display:flex;align-items:center;padding-block:12px}
+.sheet-plan .svg-scroll svg{flex:1}
+.sheet-plan .sheet-head{margin-bottom:0}
+.sheet-plan > figcaption{margin-top:0!important}
+.swipe-hint{display:none}
+@media (max-width:700px){.swipe-hint{display:block;margin:6px 0 4px;color:var(--accent)}}
+.svg-scroll svg{display:block;width:100%;height:auto;min-width:0}
+@media (max-width:700px){.svg-scroll svg{min-width:640px}}
+#planSvg{font-family:var(--f-mono)}
+#planSvg .wall{stroke:var(--ink);stroke-linecap:square;fill:none}
+#planSvg .wall.ext{stroke-width:9}
+#planSvg .wall.int{stroke-width:4.5}
+#planSvg .cut{fill:var(--surface)}
+#planSvg .thin{stroke:var(--ink);stroke-width:.9;fill:none}
+#planSvg .glass{stroke:var(--ink);stroke-width:.7;fill:none}
+#planSvg .door{stroke:var(--ink);stroke-width:.8;fill:none}
+#planSvg .swing{stroke:var(--muted);stroke-width:.6;fill:none;stroke-dasharray:2 2}
+#planSvg .furn{stroke:var(--muted);stroke-width:.7;fill:none}
+#planSvg .deck{stroke:var(--line-2);stroke-width:.6}
+#planSvg .terr{stroke:var(--muted);stroke-width:.8;fill:none;stroke-dasharray:6 4}
+#planSvg .axis{stroke:var(--accent);stroke-width:.6;stroke-dasharray:10 4 2 4;opacity:.7}
+#planSvg .bubble circle{fill:var(--surface);stroke:var(--accent);stroke-width:1}
+#planSvg .bubble text{fill:var(--accent);font-size:10px;text-anchor:middle;dominant-baseline:central}
+#planSvg .dim{stroke:var(--ink);stroke-width:.6}
+#planSvg .dim-t{fill:var(--ink);font-size:9.5px;text-anchor:middle}
+#planSvg .rn{fill:var(--ink);font-size:8.6px;letter-spacing:.08em;text-anchor:middle;text-transform:uppercase}
+#planSvg .ra{fill:var(--muted);font-size:8.2px;text-anchor:middle}
+#planSvg .tb rect{fill:none;stroke:var(--ink);stroke-width:.8}
+#planSvg .tb text{fill:var(--ink);font-size:8.6px}
+#planSvg .tb .big{font-family:var(--f-display);font-size:12px;font-weight:650}
+#planSvg .acc{fill:var(--accent)}
+#planSvg .hot{fill:var(--accent);opacity:0;transition:opacity .3s;pointer-events:none}
+#planSvg .room-hit{fill:transparent}
+#planSvg .hot.show{opacity:.09}
+#planSvg .draw{stroke-dasharray:1;stroke-dashoffset:0;transition:stroke-dashoffset 1.6s var(--ease)}
+.sheet-plan.pre #planSvg .draw{stroke-dashoffset:1}
+#planSvg .late{transition:opacity .8s var(--ease) 1s}
+.sheet-plan.pre #planSvg .late{opacity:0}
+.legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px;margin:0;padding:0;list-style:none}
+.legend li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:var(--fs-small);cursor:default;transition:color .2s}
+.legend li span:last-child{font-family:var(--f-mono);font-size:.8125rem;color:var(--muted)}
+.legend li:hover,.legend li.on{color:var(--accent)}
+.sun-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:grid;gap:12px;align-content:space-between}
+.sun-card header{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.sun-card h3{font-size:1rem;font-variation-settings:"wdth" 110}
+.sun-card p{color:var(--muted);font-size:var(--fs-small)}
+.sun-card svg{width:100%;height:auto;display:block}
+.sun-time{font-family:var(--f-mono);font-size:.8125rem;color:var(--accent);font-variant-numeric:tabular-nums}
+
+/* Barrios */
+.market{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(20px,3vw,48px);align-items:start}
+.market-chart{grid-column:1 / span 8;min-width:0}
+.market-note{grid-column:10 / span 3;color:var(--muted);font-size:var(--fs-small);display:grid;gap:14px;min-width:0}
+.bars{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.bar-row{display:grid;grid-template-columns:150px minmax(0,1fr) 72px;gap:16px;align-items:center;min-height:48px}
+.bar-row .n{font-weight:500}
+.bar-track{position:relative;height:12px}
+.bar-track::before{content:"";position:absolute;inset:5px 0;background:var(--line);border-radius:2px}
+.bar-fill{position:absolute;left:0;top:0;bottom:0;width:var(--w);background:var(--ink);border-radius:2px;transition:width 1.3s var(--ease);transition-delay:var(--d,0s)}
+.market-chart.pre .bar-fill{width:0}
+.bar-row.hl .bar-fill{background:var(--accent)}
+.bar-row .v{text-align:right}
+.axis-row{display:grid;grid-template-columns:150px minmax(0,1fr) 72px;gap:16px;margin-top:10px;color:var(--muted)}
+.axis-scale{position:relative;height:18px;border-top:1px solid var(--line-2)}
+.axis-scale span{position:absolute;top:4px;transform:translateX(-50%);font-family:var(--f-mono);font-size:.6875rem}
+.axis-scale span:first-child{transform:none}
+
+/* Vender: escena fijada. La sección mide una pantalla + 140 vh de recorrido; mientras dura, el contenido queda
+   centrado bajo el header y la línea se dibuja con calma, con una pausa breve al inicio y al final. */
+.vender-scene{position:relative;height:calc(100vh + 140vh)}
+.vender-pin{position:sticky;top:calc(72px + env(safe-area-inset-top,0px));height:calc(100vh - 72px - env(safe-area-inset-top,0px));
+  display:flex;align-items:center;padding-block:24px}
+.vender-pin > .wrap{width:100%}
+@media (max-width:900px),(max-height:700px){
+  .vender-scene{height:auto}
+  .vender-pin{position:static;height:auto;display:block;padding-block:var(--sec-pad)}
+}
+/* Vender: proceso como recorrido ondulado que se dibuja con el scroll */
+.flow{position:relative;margin-top:clamp(8px,2vw,24px)}
+.flow-wave{position:relative;aspect-ratio:1200/260;max-width:100%}
+.flow-wave > svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.f-track{fill:none;stroke:var(--line-2);stroke-width:1.5;stroke-dasharray:2 6;stroke-linecap:round}
+.f-ink{fill:none;stroke:var(--accent);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}
+.f-glow{fill:none;stroke:var(--accent);stroke-width:14;stroke-linecap:round;opacity:.12;stroke-dasharray:1;stroke-dashoffset:1;filter:blur(6px)}
+.f-head{fill:var(--accent);opacity:0;transition:opacity .3s}
+.flow.drawing .f-head{opacity:1}
+.wnode{position:absolute;transform:translate(-50%,-50%) scale(.92);width:48px;height:48px;display:grid;place-items:center;border-radius:15px;
+  background:var(--surface);color:color-mix(in srgb,var(--ink) 55%,transparent);box-shadow:0 0 0 8px var(--surface),0 1px 2px rgba(18,21,24,.06),0 14px 30px -14px rgba(18,21,24,.3);
+  transition:background-color .5s var(--ease),color .5s var(--ease),transform .6s var(--ease),box-shadow .6s var(--ease);z-index:2}
+.wnode svg{width:20px;height:20px}
+.wnode::after{content:"";position:absolute;inset:-7px;border-radius:20px;border:1px solid var(--accent);opacity:0;transform:scale(.85);transition:opacity .6s,transform .6s var(--ease)}
+.wnode.on{background:var(--accent);color:var(--accent-ink);transform:translate(-50%,-50%) scale(1);box-shadow:0 0 0 8px var(--surface),0 18px 40px -12px color-mix(in srgb,var(--accent) 60%,transparent)}
+.wnode.on::after{opacity:.35;transform:scale(1)}
+.wnum{position:absolute;font-family:var(--f-display);font-weight:760;font-variation-settings:"wdth" 125;letter-spacing:-.05em;line-height:1;
+  font-size:clamp(2.75rem,5.6vw,5.25rem);color:var(--ink);opacity:.05;transform:translate(14%,-108%);transition:opacity .7s var(--ease),transform .9s var(--ease);user-select:none;z-index:1}
+.wnum.dn{transform:translate(14%,8%)}
+.wnum.on{opacity:.09}
+.flow-cols{list-style:none;margin:clamp(20px,3vw,36px) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.4vw,36px);position:relative}
+.rail{display:none}
+.mnode{display:none}
+.fcol{min-width:0;opacity:.38;transform:translateY(10px);transition:opacity .6s var(--ease),transform .7s var(--ease)}
+.fcol.on{opacity:1;transform:none}
+.fbody{display:grid;gap:8px;padding-top:18px;border-top:1px solid var(--line);position:relative}
+.fbody::before{content:"";position:absolute;left:0;top:-1px;height:2px;width:100%;background:var(--accent);transform-origin:left;transform:scaleX(0);transition:transform .8s var(--ease)}
+.fcol.on .fbody::before{transform:scaleX(1)}
+.fmeta{display:flex;align-items:center;justify-content:space-between;gap:10px;font-family:var(--f-mono);font-size:.75rem;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.fdur{text-transform:none;letter-spacing:.01em;padding:3px 9px;border-radius:999px;background:var(--bg);border:1px solid var(--line);color:var(--ink);white-space:nowrap}
+.fcol.on .fdur{background:var(--accent-soft);border-color:transparent;color:var(--accent)}
+.fcol h3{font-size:clamp(1.125rem,1.5vw,1.3125rem);font-variation-settings:"wdth" 110;line-height:1.2}
+.fdesc{color:var(--muted);font-size:.9375rem}
+.sell-cta{margin-top:0;display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between;
+  padding:clamp(22px,3vw,32px);border-radius:14px;background:var(--foot-bg);color:var(--foot-fg)}
+.sell-cta p{max-width:56ch;color:color-mix(in srgb,var(--foot-fg) 72%,var(--foot-bg))}
+.sell-cta strong{font-family:var(--f-display);font-weight:640;font-size:clamp(1.3rem,2vw,1.625rem);font-variation-settings:"wdth" 114;display:block;margin-bottom:6px;letter-spacing:-.015em;color:var(--foot-fg)}
+.sell-cta .btn-primary{background:var(--foot-fg);color:var(--foot-bg)}
+.sell-cta .btn-primary:hover{background:#fff}
+
+/* Comisión: mismo aire arriba y abajo (la sección siguiente aporta el de abajo) y entrada atada al scroll */
+section.block.comision{padding-bottom:0}
+/* Banner con forma fija: entra una sola vez (sube y aparece) y su contenido llega en secuencia;
+   lo único atado al scroll es un brillo interior que lo recorre, sin deformar la caja */
+.sell-cta{position:relative;overflow:hidden;isolation:isolate;transition:opacity .9s var(--ease),transform 1.1s var(--ease)}
+.sell-cta.pre{opacity:0;transform:translate3d(0,44px,0)}
+.sell-cta::before{content:"";position:absolute;inset:-40%;z-index:-1;pointer-events:none;opacity:.55;
+  background:radial-gradient(34% 60% at var(--gx,50%) 100%,color-mix(in srgb,var(--foot-fg) 16%,transparent),transparent 70%)}
+.sell-cta strong,.sell-cta p > span{display:block}
+.sell-cta strong,.sell-cta p > span,.sell-cta .btn{transition:opacity .8s var(--ease),transform .9s var(--ease)}
+.sell-cta strong{transition-delay:.18s}
+.sell-cta p > span{transition-delay:.32s}
+.sell-cta .btn{transition-delay:.46s,.46s}
+.sell-cta.pre strong,.sell-cta.pre p > span,.sell-cta.pre .btn{opacity:0;transform:translate3d(0,16px,0)}
+/* Contacto */
+.contact{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(24px,3vw,56px)}
+.contact-info{grid-column:1 / span 5;display:grid;gap:28px;align-content:start;min-width:0}
+.agent{display:flex;gap:14px;align-items:center}
+.avatar{width:52px;height:52px;border-radius:999px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-family:var(--f-display);font-weight:700;font-variation-settings:"wdth" 115;flex:none}
+.agent .mono{color:var(--muted);display:block}
+.dl{display:grid;gap:14px;margin:0}
+.dl div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.dl dt{color:var(--muted);font-size:var(--fs-small)}
+.dl dd{margin:0;overflow-wrap:anywhere}
+.form{grid-column:7 / span 6;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:clamp(20px,3vw,32px);display:grid;gap:18px;min-width:0}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+textarea.control{min-height:112px;padding:12px;resize:vertical;line-height:1.5}
+.err{font-size:.8125rem;color:var(--danger);display:none}
+.field.invalid .control{border-color:var(--danger)}
+.field.invalid .err{display:block}
+.form-foot{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between}
+.form-foot .hint{max-width:34ch}
+.success{display:grid;gap:10px;align-content:center;min-height:320px}
+.success .check{width:44px;height:44px;border-radius:999px;background:color-mix(in srgb,var(--ok) 14%,transparent);color:var(--ok);display:grid;place-items:center}
+.success h3{font-size:1.375rem;font-variation-settings:"wdth" 110}
+.success p{color:var(--muted)}
+
+/* Footer */
+.site-footer{background:var(--foot-bg);color:var(--foot-fg);padding-block:clamp(64px,8vw,104px) 28px;overflow:hidden}
+.site-footer a{text-decoration:none;color:color-mix(in srgb,var(--foot-fg) 72%,var(--foot-bg))}
+.site-footer a:hover{color:var(--foot-fg)}
+.foot-top{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px}
+.foot-brand{grid-column:1 / span 4;display:grid;gap:18px;align-content:start;min-width:0}
+.foot-brand .brand{color:var(--foot-fg);justify-self:start}
+.foot-brand p{color:color-mix(in srgb,var(--foot-fg) 70%,var(--foot-bg));max-width:36ch;font-size:.9375rem}
+.foot-col{grid-column:span 2;display:grid;gap:10px;align-content:start;font-size:.9375rem;min-width:0}
+.foot-col h4{margin:0 0 4px;font-family:var(--f-mono);font-weight:400;font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;color:color-mix(in srgb,var(--foot-fg) 55%,var(--foot-bg))}
+.foot-col.wide{grid-column:span 4}
+.socials{display:flex;gap:8px}
+.socials a{width:40px;height:40px;border-radius:999px;border:1px solid color-mix(in srgb,var(--foot-fg) 22%,var(--foot-bg));display:grid;place-items:center;transition:border-color .2s,background-color .2s}
+.socials a:hover{border-color:var(--foot-fg);background:color-mix(in srgb,var(--foot-fg) 8%,var(--foot-bg))}
+.socials svg{width:16px;height:16px}
+.foot-mark{margin-top:clamp(56px,7vw,88px);font-family:var(--f-display);font-weight:760;font-variation-settings:"wdth" 125;letter-spacing:-.045em;line-height:.8;
+  color:color-mix(in srgb,var(--foot-fg) 10%,var(--foot-bg));white-space:nowrap;user-select:none;font-size:12vw;padding-bottom:.04em}
+.foot-mark span{display:inline-block;transition:color 1.2s var(--ease)}
+.foot-mark:hover span{color:color-mix(in srgb,var(--foot-fg) 18%,var(--foot-bg))}
+.foot-bottom .powered{color:color-mix(in srgb,var(--foot-fg) 72%,var(--foot-bg))}
+.foot-bottom .powered strong{font-weight:550;color:var(--foot-fg)}
+.foot-bottom{margin-top:22px;padding-top:20px;border-top:1px solid color-mix(in srgb,var(--foot-fg) 16%,var(--foot-bg));display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;
+  font-size:.8125rem;color:color-mix(in srgb,var(--foot-fg) 55%,var(--foot-bg))}
+
+
+/* ---------- Responsive ---------- */
+@media (max-width:1100px){
+  .search{grid-template-columns:1fr 1fr 1fr}
+  .search .segmented{grid-column:1 / -1}
+  .search .btn{grid-column:1 / -1}
+  .market-chart{grid-column:1 / -1}.market-note{grid-column:1 / -1;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .foot-brand{grid-column:1 / -1}.foot-col{grid-column:span 3}.foot-col.wide{grid-column:span 6}
+  .sheet-plan,.sheet-side{grid-column:1 / -1}
+  .sheet-side{grid-template-columns:1fr 1fr}
+  .legend{grid-template-columns:1fr}
+}
+@media (max-width:900px){
+  .nav,.header-cta{display:none}
+  .menu-btn{display:inline-flex}
+  .site-header.open{background:var(--bg);border-bottom-color:var(--line)}
+  .site-header.open .nav{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;padding:8px max(16px,env(safe-area-inset-right,0px)) 16px max(16px,env(safe-area-inset-left,0px));background:var(--bg);border-bottom:1px solid var(--line)}
+  .site-header.open .nav a{padding:12px 4px;border-radius:0;border-bottom:1px solid var(--line);opacity:1}
+  .hero{height:150vh}
+  .hero-copy{grid-column:1 / -1}
+  .hero-poster{object-position:72% 50%}
+  .hero-veil{background:
+    linear-gradient(180deg,color-mix(in srgb,var(--bg) 92%,transparent) 0%,color-mix(in srgb,var(--bg) 60%,transparent) 38%,transparent 60%),
+    linear-gradient(0deg,var(--bg) 0.0%,color-mix(in srgb,var(--bg) 99.7%,transparent) 3.4%,color-mix(in srgb,var(--bg) 97.7%,transparent) 6.9%,color-mix(in srgb,var(--bg) 93.1%,transparent) 10.3%,color-mix(in srgb,var(--bg) 85.5%,transparent) 13.7%,color-mix(in srgb,var(--bg) 75.4%,transparent) 17.1%,color-mix(in srgb,var(--bg) 63.2%,transparent) 20.6%,color-mix(in srgb,var(--bg) 50.0%,transparent) 24.0%,color-mix(in srgb,var(--bg) 36.8%,transparent) 27.4%,color-mix(in srgb,var(--bg) 24.6%,transparent) 30.9%,color-mix(in srgb,var(--bg) 14.5%,transparent) 34.3%,color-mix(in srgb,var(--bg) 6.9%,transparent) 37.7%,color-mix(in srgb,var(--bg) 2.3%,transparent) 41.1%,color-mix(in srgb,var(--bg) 0.3%,transparent) 44.6%,transparent 48.0%)}
+  .sec-head .l,.sec-head .r{grid-column:1 / -1}
+  .card,.card.w7,.card.w5{grid-column:1 / -1}
+  .card-media{height:auto;aspect-ratio:4/3}
+  .gallery,.ficha-info{grid-column:1 / -1}
+  .contact-info,.form{grid-column:1 / -1}
+}
+@media (max-width:600px){
+  .search{grid-template-columns:1fr}
+  .hero-foot{display:none}
+  .hero-inner{padding-bottom:120px}
+  .sheet-side{grid-template-columns:1fr}
+  .market-note{grid-template-columns:1fr}
+  .bar-row,.axis-row{grid-template-columns:96px minmax(0,1fr) 44px;gap:10px}
+  .bar-row .n{font-size:.875rem}
+  .form-row{grid-template-columns:1fr}
+  .dl div{grid-template-columns:1fr;gap:2px}
+  .foot-col,.foot-col.wide{grid-column:1 / -1}
+  .thumb{width:80px}
+}
+/* Proceso en vertical: riel a la izquierda que se llena con el scroll.
+   Filas de igual alto (1fr) para que los íconos queden a la misma distancia entre sí. */
+@media (max-width:900px){
+  .flow-wave{display:none}
+  .flow-cols{grid-template-columns:1fr;grid-auto-rows:1fr;gap:36px 0;margin-top:8px;padding-left:64px;padding-bottom:28px}
+  .rail{display:block;position:absolute;left:23px;top:24px;bottom:0;width:2px;background:var(--line);border-radius:2px;overflow:hidden}
+  .rail i{display:block;width:100%;height:100%;background:var(--accent);transform-origin:top;transform:scaleY(0)}
+  .fcol{position:relative;opacity:1;transform:none}
+  .fcol .fbody{opacity:.38;transition:opacity .6s var(--ease)}
+  .fcol.on .fbody{opacity:1}
+  .mnode{display:grid;place-items:center;position:absolute;left:-64px;top:0;width:48px;height:48px;border-radius:15px;background:var(--surface);
+    color:color-mix(in srgb,var(--ink) 45%,transparent);box-shadow:0 0 0 6px var(--surface),0 10px 24px -12px rgba(18,21,24,.3);transition:background-color .5s,color .5s;z-index:1}
+  .mnode svg{width:22px;height:22px}
+  .fcol.on .mnode{background:var(--accent);color:var(--accent-ink)}
+  .fbody{border-top:0;padding-top:4px}
+  .fbody::before{display:none}
+}
+/* Hero en teléfonos: subtítulo corto e imagen en la mitad inferior (va al final para ganar a la regla de ≤900 px) */
+.lead-short{display:none}
+@media (max-width:600px){
+  .lead-long{display:none}.lead-short{display:inline}
+  /* la imagen arranca en la mitad inferior (--imgtop) y sube hasta llenar el hero mientras salen los títulos */
+  /* recorrido corto: el buscador empieza a entrar a 0,22 pantallas de scroll (88 px = solapamiento del buscador) */
+  .hero{height:calc(122vh + 88px)}
+  .hero-poster{top:44%;bottom:0;height:auto;object-position:72% 60%}
+  /* borde inferior de la imagen difuminado: viaja con ella al subir */
+  .hero-poster,.hero-canvas{-webkit-mask-image:linear-gradient(180deg,#000 52%,rgba(0,0,0,0.995) 56.0%,rgba(0,0,0,0.965) 60.0%,rgba(0,0,0,0.896) 64.0%,rgba(0,0,0,0.790) 68.0%,rgba(0,0,0,0.653) 72.0%,rgba(0,0,0,0.500) 76.0%,rgba(0,0,0,0.347) 80.0%,rgba(0,0,0,0.210) 84.0%,rgba(0,0,0,0.104) 88.0%,rgba(0,0,0,0.035) 92.0%,rgba(0,0,0,0.005) 96.0%,rgba(0,0,0,0.000) 100.0%);mask-image:linear-gradient(180deg,#000 52%,rgba(0,0,0,0.995) 56.0%,rgba(0,0,0,0.965) 60.0%,rgba(0,0,0,0.896) 64.0%,rgba(0,0,0,0.790) 68.0%,rgba(0,0,0,0.653) 72.0%,rgba(0,0,0,0.500) 76.0%,rgba(0,0,0,0.347) 80.0%,rgba(0,0,0,0.210) 84.0%,rgba(0,0,0,0.104) 88.0%,rgba(0,0,0,0.035) 92.0%,rgba(0,0,0,0.005) 96.0%,rgba(0,0,0,0.000) 100.0%)}
+  .hero-veil{background:linear-gradient(0deg,var(--bg) 0.0%,color-mix(in srgb,var(--bg) 99.7%,transparent) 2.9%,color-mix(in srgb,var(--bg) 97.7%,transparent) 5.7%,color-mix(in srgb,var(--bg) 93.1%,transparent) 8.6%,color-mix(in srgb,var(--bg) 85.5%,transparent) 11.4%,color-mix(in srgb,var(--bg) 75.4%,transparent) 14.3%,color-mix(in srgb,var(--bg) 63.2%,transparent) 17.1%,color-mix(in srgb,var(--bg) 50.0%,transparent) 20.0%,color-mix(in srgb,var(--bg) 36.8%,transparent) 22.9%,color-mix(in srgb,var(--bg) 24.6%,transparent) 25.7%,color-mix(in srgb,var(--bg) 14.5%,transparent) 28.6%,color-mix(in srgb,var(--bg) 6.9%,transparent) 31.4%,color-mix(in srgb,var(--bg) 2.3%,transparent) 34.3%,color-mix(in srgb,var(--bg) 0.3%,transparent) 37.1%,transparent 40.0%)}
+  .hero-veil::before{content:"";position:absolute;left:0;right:0;top:0;height:calc(var(--imgtop,44%) + var(--fade,30%));
+    background:linear-gradient(180deg,var(--bg) 0,var(--bg) var(--imgtop,44%),
+      color-mix(in srgb,var(--bg) 88%,transparent) calc(var(--imgtop,44%) + var(--fade,30%) * .25),
+      color-mix(in srgb,var(--bg) 55%,transparent) calc(var(--imgtop,44%) + var(--fade,30%) * .5),
+      color-mix(in srgb,var(--bg) 20%,transparent) calc(var(--imgtop,44%) + var(--fade,30%) * .75),transparent 100%)}
+  .hero-lead{text-shadow:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Bootstrap Icons 1.13.1 (MIT), selección vigente del LAB -->
+    <symbol id="i-arrow" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 16 16"><path fill="currentColor" d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/></symbol>
+    <symbol id="i-heart-fill" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 16 16"><path fill="currentColor" d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.920m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 16 16"><path fill="currentColor" d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 16 16"><path fill="currentColor" d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></symbol>
+    <!-- Íconos lineales de estilo Lucide (ISC): trazo uniforme para la información de propiedades -->
+    <symbol id="l-bed" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></g></symbol>
+    <symbol id="l-bath" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.68 3 4 3.68 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/><path d="M10 5 8 7"/><path d="M2 12h20"/><path d="M7 19v2"/><path d="M17 19v2"/></g></symbol>
+    <symbol id="l-area" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M14 7h3v3"/><path d="M17 7l-4.5 4.5"/><path d="M10 17H7v-3"/><path d="M7 17l4.5-4.5"/></g></symbol>
+    <symbol id="l-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></g></symbol>
+    <symbol id="l-compass" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2.1 4.9-4.9 2.1 2.1-4.9z"/></g></symbol>
+    <symbol id="l-calendar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16.5" rx="2.5"/><path d="M16 2.5v4"/><path d="M8 2.5v4"/><path d="M3 10h18"/></g></symbol>
+    <symbol id="l-chevron" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m9 18 6-6-6-6"/></g></symbol>
+    <symbol id="l-calc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2.5" width="16" height="19" rx="2.5"/><path d="M8 6.5h8"/><path d="M8 11h.01M12 11h.01M16 11h.01M8 14.5h.01M12 14.5h.01M8 18h.01M12 18h.01"/><path d="M16 14.5V18"/></g></symbol>
+    <symbol id="l-camera" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3.2"/></g></symbol>
+    <symbol id="l-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></g></symbol>
+    <symbol id="l-pen" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></g></symbol>
+    <symbol id="l-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="l-heart-fill" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="logo" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" d="M3 27 13 9l5 8 3-5 8 15z"/><path fill="currentColor" d="M21 2.5 23.2 8h-4.4z"/></symbol>
+  </defs>
+</svg>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Cumbre Norte Propiedades, inicio">
+      <svg aria-hidden="true"><use href="#logo"/></svg>
+      <span class="brand-name">Cumbre Norte<small>Propiedades</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#propiedades">Propiedades</a>
+      <a href="#ficha">Ficha destacada</a>
+      <a href="#barrios">Barrios</a>
+      <a href="#vender">Vender</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn btn-primary header-cta" href="#contacto">Agendar visita</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="hero" aria-labelledby="hero-title">
+    <div class="hero-stage">
+      <img class="hero-poster" src="assets/hero.jpg" alt="" fetchpriority="high">
+      <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero-veil"></div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy" id="heroCopy">
+          <p class="eyebrow" style="color:var(--ink);opacity:.7">Santiago oriente · Litoral central</p>
+          <h1 id="hero-title"><span class="l"><span>Elegimos casas</span></span><span class="l"><span>por su luz.</span></span></h1>
+          <p class="hero-lead"><span class="lead-long">Corretaje de casas y departamentos con orientación, vista y buena construcción. Cada propiedad viene con planos, asoleamiento medido y una tasación con comparables reales de la zona.</span><span class="lead-short">Casas y departamentos con buena luz, planos y una tasación real.</span></p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#propiedades">Ver propiedades</a>
+            <a class="btn btn-light" href="#vender">Vender con nosotros</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="search-band">
+    <div class="wrap">
+      <div class="search-head">
+        <h2 id="search-title">¿Qué estás buscando?</h2>
+        <p>Encuentra la propiedad que necesitas por comuna, tipo y precio.</p>
+      </div>
+      <form class="search" id="search" aria-labelledby="search-title" novalidate>
+        <div class="segmented" role="group" aria-label="Operación">
+          <button type="button" aria-pressed="true" data-op="venta">Comprar</button>
+          <button type="button" aria-pressed="false" data-op="arriendo">Arrendar</button>
+        </div>
+        <div class="field">
+          <label for="s-comuna">Comuna</label>
+          <select class="control" id="s-comuna">
+            <option value="">Todas</option>
+            <option>Lo Barnechea</option>
+            <option>Vitacura</option>
+            <option>Colina · Chicureo</option>
+            <option>Zapallar</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="s-tipo">Tipo</label>
+          <select class="control" id="s-tipo">
+            <option value="todas">Todos</option>
+            <option value="casa">Casa</option>
+            <option value="depto">Departamento</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="s-max">Hasta (UF)</label>
+          <input class="control mono" id="s-max" inputmode="numeric" placeholder="40.000" autocomplete="off">
+        </div>
+        <button class="btn btn-primary" type="submit">Buscar</button>
+      </form>
+      <p class="search-status" id="searchStatus" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- ================= PROPIEDADES ================= -->
+  <section class="block" id="propiedades" aria-labelledby="prop-title">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <div class="l">
+          <p class="eyebrow">En venta · noviembre 2026</p>
+          <h2 id="prop-title">Propiedades seleccionadas</h2>
+        </div>
+        <p class="r">Publicamos pocas propiedades a la vez. Visitamos cada una antes de aceptarla y medimos su luz en invierno.</p>
+      </div>
+
+      <div class="filters">
+        <div class="segmented" role="group" aria-label="Filtrar por tipo" id="typeFilter">
+          <button type="button" aria-pressed="true" data-filter="todas">Todas</button>
+          <button type="button" aria-pressed="false" data-filter="casa">Casas</button>
+          <button type="button" aria-pressed="false" data-filter="depto">Departamentos</button>
+        </div>
+        <p class="count mono" id="count" aria-live="polite">4 propiedades</p>
+      </div>
+
+      <div class="cards" id="cards">
+        <article class="card" data-reveal data-type="casa" data-uf="24500" data-comuna="Colina · Chicureo">
+          <div class="card-media">
+            <img src="assets/chicureo.jpg" alt="Casa de un piso entre robles, con ventanales abiertos hacia el jardín y terraza techada" loading="lazy">
+            <span class="tag">Casa</span>
+            <button class="fav" type="button" aria-pressed="false" aria-label="Guardar Casa El Peumo"><svg class="off" aria-hidden="true"><use href="#l-heart"/></svg><svg class="on" aria-hidden="true"><use href="#l-heart-fill"/></svg></button>
+          </div>
+          <div class="card-info">
+            <div class="ci-top"><h3>Casa El Peumo</h3><span class="chip" title="Orientación principal"><svg aria-hidden="true"><use href="#l-compass"/></svg>N</span></div>
+            <p class="ci-loc"><svg aria-hidden="true"><use href="#l-pin"/></svg><span>Chicureo, Colina<span class="sep">·</span>1.650 m² de terreno</span></p>
+            <ul class="ci-specs" aria-label="Características">
+              <li><svg aria-hidden="true"><use href="#l-bed"/></svg><span><b>4</b> <i class="lg">dormitorios</i><i class="sh">dorm.</i></span></li>
+              <li><svg aria-hidden="true"><use href="#l-bath"/></svg><span><b>4</b> baños</span></li>
+              <li><svg aria-hidden="true"><use href="#l-area"/></svg><span><b>268</b> m²<i class="lg"> útiles</i></span></li>
+            </ul>
+            <div class="ci-foot">
+              <p class="ci-price"><span>UF 24.500</span><small>≈ $995 MM</small></p>
+              <a class="btn btn-dark" href="#contacto" data-interest="Casa El Peumo"><svg aria-hidden="true"><use href="#l-calendar"/></svg>Agendar visita<svg class="chev" aria-hidden="true"><use href="#l-chevron"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-reveal style="--d:.12s" data-type="depto" data-uf="21800" data-comuna="Vitacura">
+          <div class="card-media">
+            <img src="assets/vitacura.jpg" alt="Edificio residencial de seis pisos con terrazas vegetadas y balcones de hormigón blanco" loading="lazy">
+            <span class="tag">Departamento</span>
+            <button class="fav" type="button" aria-pressed="false" aria-label="Guardar Departamento Luis Pasteur"><svg class="off" aria-hidden="true"><use href="#l-heart"/></svg><svg class="on" aria-hidden="true"><use href="#l-heart-fill"/></svg></button>
+          </div>
+          <div class="card-info">
+            <div class="ci-top"><h3>Departamento Luis Pasteur</h3><span class="chip" title="Orientación principal"><svg aria-hidden="true"><use href="#l-compass"/></svg>NO</span></div>
+            <p class="ci-loc"><svg aria-hidden="true"><use href="#l-pin"/></svg><span>Vitacura · piso 5 de 6<span class="sep">·</span>64 m² de terraza</span></p>
+            <ul class="ci-specs" aria-label="Características">
+              <li><svg aria-hidden="true"><use href="#l-bed"/></svg><span><b>3</b> <i class="lg">dormitorios</i><i class="sh">dorm.</i></span></li>
+              <li><svg aria-hidden="true"><use href="#l-bath"/></svg><span><b>3</b> baños</span></li>
+              <li><svg aria-hidden="true"><use href="#l-area"/></svg><span><b>186</b> m²<i class="lg"> útiles</i></span></li>
+            </ul>
+            <div class="ci-foot">
+              <p class="ci-price"><span>UF 21.800</span><small>≈ $885 MM</small></p>
+              <a class="btn btn-dark" href="#contacto" data-interest="Departamento Luis Pasteur"><svg aria-hidden="true"><use href="#l-calendar"/></svg>Agendar visita<svg class="chev" aria-hidden="true"><use href="#l-chevron"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-reveal data-type="depto" data-uf="13900" data-comuna="Vitacura">
+          <div class="card-media">
+            <img src="assets/cocina.jpg" alt="Cocina minimalista con isla de travertino, muebles de roble claro y ventana horizontal al jardín" loading="lazy">
+            <span class="tag">Departamento</span>
+            <button class="fav" type="button" aria-pressed="false" aria-label="Guardar Departamento Parque Bicentenario"><svg class="off" aria-hidden="true"><use href="#l-heart"/></svg><svg class="on" aria-hidden="true"><use href="#l-heart-fill"/></svg></button>
+          </div>
+          <div class="card-info">
+            <div class="ci-top"><h3>Departamento Parque Bicentenario</h3><span class="chip" title="Orientación principal"><svg aria-hidden="true"><use href="#l-compass"/></svg>N</span></div>
+            <p class="ci-loc"><svg aria-hidden="true"><use href="#l-pin"/></svg><span>Vitacura · frente al parque<span class="sep">·</span>22 m² de terraza</span></p>
+            <ul class="ci-specs" aria-label="Características">
+              <li><svg aria-hidden="true"><use href="#l-bed"/></svg><span><b>2</b> <i class="lg">dormitorios</i><i class="sh">dorm.</i></span></li>
+              <li><svg aria-hidden="true"><use href="#l-bath"/></svg><span><b>2</b> baños</span></li>
+              <li><svg aria-hidden="true"><use href="#l-area"/></svg><span><b>118</b> m²<i class="lg"> útiles</i></span></li>
+            </ul>
+            <div class="ci-foot">
+              <p class="ci-price"><span>UF 13.900</span><small>≈ $564 MM</small></p>
+              <a class="btn btn-dark" href="#contacto" data-interest="Departamento Parque Bicentenario"><svg aria-hidden="true"><use href="#l-calendar"/></svg>Agendar visita<svg class="chev" aria-hidden="true"><use href="#l-chevron"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-reveal style="--d:.12s" data-type="casa" data-uf="46000" data-comuna="Zapallar">
+          <div class="card-media">
+            <img src="assets/zapallar.jpg" alt="Casa de hormigón blanco y madera oscura sobre las rocas, con terraza y piscina frente al Pacífico" loading="lazy">
+            <span class="tag">Casa</span>
+            <button class="fav" type="button" aria-pressed="false" aria-label="Guardar Casa Punta Cachagua"><svg class="off" aria-hidden="true"><use href="#l-heart"/></svg><svg class="on" aria-hidden="true"><use href="#l-heart-fill"/></svg></button>
+          </div>
+          <div class="card-info">
+            <div class="ci-top"><h3>Casa Punta Cachagua</h3><span class="chip" title="Orientación principal"><svg aria-hidden="true"><use href="#l-compass"/></svg>NO</span></div>
+            <p class="ci-loc"><svg aria-hidden="true"><use href="#l-pin"/></svg><span>Zapallar · primera línea<span class="sep">·</span>1.100 m² de terreno</span></p>
+            <ul class="ci-specs" aria-label="Características">
+              <li><svg aria-hidden="true"><use href="#l-bed"/></svg><span><b>5</b> <i class="lg">dormitorios</i><i class="sh">dorm.</i></span></li>
+              <li><svg aria-hidden="true"><use href="#l-bath"/></svg><span><b>5</b> baños</span></li>
+              <li><svg aria-hidden="true"><use href="#l-area"/></svg><span><b>320</b> m²<i class="lg"> útiles</i></span></li>
+            </ul>
+            <div class="ci-foot">
+              <p class="ci-price"><span>UF 46.000</span><small>≈ $1.868 MM</small></p>
+              <a class="btn btn-dark" href="#contacto" data-interest="Casa Punta Cachagua"><svg aria-hidden="true"><use href="#l-calendar"/></svg>Agendar visita<svg class="chev" aria-hidden="true"><use href="#l-chevron"/></svg></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FICHA ================= -->
+  <section class="block band" id="ficha" aria-labelledby="ficha-title">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <div class="l">
+          <p class="eyebrow">Ficha destacada · Lo Barnechea</p>
+          <h2 id="ficha-title">Casa Los Trapenses</h2>
+        </div>
+        <p class="r">Hormigón a la vista con moldaje de tablas, cielos de madera y un living de doble altura que mira directo a la cordillera.</p>
+      </div>
+
+      <div class="ficha-grid">
+        <div class="gallery" data-reveal>
+          <div class="gallery-main"><img id="galleryMain" src="assets/living.jpg" alt="Living de doble altura con piso de hormigón pulido y un ventanal hacia la cordillera"></div>
+          <div class="thumbs" role="group" aria-label="Fotos de la propiedad">
+            <button class="thumb" type="button" aria-pressed="true" aria-label="Foto 1: living" data-src="assets/living.jpg" data-alt="Living de doble altura con piso de hormigón pulido y un ventanal hacia la cordillera"><img src="assets/living.jpg" alt=""></button>
+            <button class="thumb" type="button" aria-pressed="false" aria-label="Foto 2: fachada" data-src="assets/fachada.jpg" data-alt="Fachada de hormigón y madera con techo en voladizo y la cordillera detrás"><img src="assets/fachada.jpg" alt=""></button>
+            <button class="thumb" type="button" aria-pressed="false" aria-label="Foto 3: entorno" data-src="assets/hero.jpg" data-alt="La casa en su entorno de quebrada con la cordillera nevada"><img src="assets/hero.jpg" alt=""></button>
+          </div>
+        </div>
+
+        <div class="ficha-info" data-reveal style="--d:.1s">
+          <div>
+            <div class="ficha-price"><span class="uf">UF 38.900</span><span class="mono">≈ $1.579 MM</span></div>
+            <p class="hint" style="margin-top:6px">Conversión referencial con UF a $40.600.</p>
+          </div>
+          <table class="spec-table">
+            <caption class="sr-only">Características de Casa Los Trapenses</caption>
+            <tbody>
+              <tr><th scope="row">Superficie útil</th><td>412 m²</td></tr>
+              <tr><th scope="row">Terreno</th><td>2.480 m²</td></tr>
+              <tr><th scope="row">Dormitorios · baños</th><td>4 · 5</td></tr>
+              <tr><th scope="row">Estacionamientos · bodega</th><td>3 · sí</td></tr>
+              <tr><th scope="row">Orientación principal</th><td>Nor-poniente</td></tr>
+              <tr><th scope="row">Año de recepción final</th><td>2021</td></tr>
+              <tr><th scope="row">Contribuciones</th><td>UF 9,8 / trimestre</td></tr>
+              <tr><th scope="row">Gastos comunes</th><td>$185.000 / mes</td></tr>
+            </tbody>
+          </table>
+          <div class="ficha-actions">
+            <a class="btn btn-primary" href="#contacto" data-interest="Casa Los Trapenses">Agendar visita</a>
+            <a class="btn btn-ghost" href="#plano">Ver plano</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="sheet" id="plano">
+        <figure class="sheet-plan" id="sheetPlan" style="margin:0">
+          <div class="sheet-head"><h3>Planta primer nivel</h3><span class="mono" style="color:var(--muted)">Lámina A-101 · esc. 1:150</span></div>
+          <div class="svg-scroll">
+            <svg id="planSvg" viewBox="0 0 900 620" role="img" aria-labelledby="planTitle">
+              <title id="planTitle">Planta del primer nivel de Casa Los Trapenses, 24,60 por 10,10 metros, con terraza cubierta al norte</title>
+            </svg>
+          </div>
+          <p class="hint swipe-hint" aria-hidden="true">Desliza el plano hacia los lados para verlo completo →</p>
+          <figcaption class="hint" style="margin-top:10px">Plano esquemático de referencia. Superficies interiores a eje de muros.</figcaption>
+        </figure>
+        <div class="sheet-side">
+          <div data-reveal>
+            <p class="eyebrow" style="margin-bottom:10px">Recintos · nivel 1</p>
+            <ul class="legend" id="roomLegend"></ul>
+          </div>
+          <div class="sun-card" data-reveal style="--d:.1s">
+            <header><h3>Asoleamiento</h3><span class="sun-time" id="sunTime">21 jun · 13:20</span></header>
+            <svg viewBox="0 0 260 140" role="img" aria-labelledby="sunT">
+              <title id="sunT">Recorrido del sol visto hacia el norte: arco alto el 21 de diciembre y arco bajo el 21 de junio, que aún da 7 horas de sol directo en la fachada</title>
+              <line x1="12" y1="116" x2="248" y2="116" stroke="var(--ink)" stroke-width="1.2"/>
+              <path d="M26 116 A104 94 0 0 1 234 116" fill="none" stroke="var(--line-2)" stroke-width="1.2" stroke-dasharray="3 4"/>
+              <path id="winterArc" d="M66 116 A64 56 0 0 1 194 116" fill="none" stroke="var(--accent)" stroke-width="1.8"/>
+              <circle cx="130" cy="22" r="4" fill="var(--line-2)"/>
+              <circle id="sunHalo" cx="130" cy="60" r="14" fill="var(--accent)" opacity=".15"/>
+              <circle id="sunDot" cx="130" cy="60" r="7" fill="var(--accent)"/>
+              <rect x="119" y="103" width="22" height="13" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.2"/>
+              <text x="12" y="133" font-family="Geist Mono, monospace" font-size="9" fill="var(--muted)">Oriente</text>
+              <text x="248" y="133" text-anchor="end" font-family="Geist Mono, monospace" font-size="9" fill="var(--muted)">Poniente</text>
+              <text x="130" y="133" text-anchor="middle" font-family="Geist Mono, monospace" font-size="9" fill="var(--accent)">Norte</text>
+            </svg>
+            <p>En Chile el sol recorre el cielo por el norte. Esta fachada nor-poniente recibe 7 horas de sol directo el 21 de junio, el día más corto del año.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BARRIOS ================= -->
+  <section class="block" id="barrios" aria-labelledby="barrios-title">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <div class="l">
+          <p class="eyebrow">Valor de referencia</p>
+          <h2 id="barrios-title">Cuánto vale el metro cuadrado</h2>
+        </div>
+        <p class="r">Promedio de cierres de casas y departamentos usados en las comunas donde trabajamos.</p>
+      </div>
+      <div class="market">
+        <figure class="market-chart" id="marketChart" style="margin:0">
+          <ul class="bars" aria-label="UF por metro cuadrado útil, por comuna">
+            <li class="bar-row"><span class="n">Vitacura</span><span class="bar-track"><span class="bar-fill" style="--w:90.8%"></span></span><span class="v mono">118</span></li>
+            <li class="bar-row"><span class="n">Las Condes</span><span class="bar-track"><span class="bar-fill" style="--w:80%;--d:.08s"></span></span><span class="v mono">104</span></li>
+            <li class="bar-row hl"><span class="n">Lo Barnechea</span><span class="bar-track"><span class="bar-fill" style="--w:73.8%;--d:.16s"></span></span><span class="v mono">96</span></li>
+            <li class="bar-row"><span class="n">Providencia</span><span class="bar-track"><span class="bar-fill" style="--w:70%;--d:.24s"></span></span><span class="v mono">91</span></li>
+            <li class="bar-row"><span class="n">Zapallar</span><span class="bar-track"><span class="bar-fill" style="--w:67.7%;--d:.32s"></span></span><span class="v mono">88</span></li>
+            <li class="bar-row"><span class="n">Chicureo</span><span class="bar-track"><span class="bar-fill" style="--w:47.7%;--d:.4s"></span></span><span class="v mono">62</span></li>
+          </ul>
+          <div class="axis-row" aria-hidden="true">
+            <span class="mono">UF / m²</span>
+            <span class="axis-scale"><span style="left:0">0</span><span style="left:30.77%">40</span><span style="left:61.54%">80</span><span style="left:92.31%">120</span></span>
+            <span></span>
+          </div>
+          <figcaption class="hint" style="margin-top:16px">Valores de ejemplo para esta demostración, no constituyen tasación.</figcaption>
+        </figure>
+        <div class="market-note" data-reveal style="--d:.15s">
+          <p><strong style="color:var(--ink);font-weight:550">Lo Barnechea</strong> sube cuando la casa tiene vista despejada y fachada norte: los cierres de este año con ambas condiciones superan el promedio de la comuna.</p>
+          <p>La tasación que hacemos antes de publicar usa ventas cerradas en un radio de 1,5 km, no precios de aviso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VENDER ================= -->
+  <section class="band vender-scene" id="vender" aria-labelledby="vender-title">
+    <div class="vender-pin"><div class="wrap">
+      <div class="sec-head" data-reveal>
+        <div class="l">
+          <p class="eyebrow">Para propietarios</p>
+          <h2 id="vender-title">Vender con nosotros</h2>
+        </div>
+        <p class="r">Un solo corredor te acompaña desde la tasación hasta la inscripción en el Conservador.</p>
+      </div>
+      <div class="flow" id="flow">
+        <div class="flow-wave" aria-hidden="true">
+          <svg viewBox="0 0 1200 260" id="flowSvg">
+            <path class="f-track" d="M-20 206 C 60 206 90 196 150 196 C 300 196 300 70 450 70 C 600 70 600 196 750 196 C 900 196 900 70 1050 70 C 1120 70 1150 60 1220 52"/>
+            <path class="f-glow" d="M-20 206 C 60 206 90 196 150 196 C 300 196 300 70 450 70 C 600 70 600 196 750 196 C 900 196 900 70 1050 70 C 1120 70 1150 60 1220 52" pathLength="1"/>
+            <path class="f-ink" d="M-20 206 C 60 206 90 196 150 196 C 300 196 300 70 450 70 C 600 70 600 196 750 196 C 900 196 900 70 1050 70 C 1120 70 1150 60 1220 52" pathLength="1"/>
+            <circle class="f-head" r="6" cx="-20" cy="206"/>
+          </svg>
+          <span class="wnode" data-i="0" style="left:12.5000%;top:75.3846%"><svg aria-hidden="true"><use href="#l-calc"/></svg></span><span class="wnum up" data-i="0" style="left:12.5000%;top:75.3846%" aria-hidden="true">01</span><span class="wnode" data-i="1" style="left:37.5000%;top:26.9231%"><svg aria-hidden="true"><use href="#l-camera"/></svg></span><span class="wnum dn" data-i="1" style="left:37.5000%;top:26.9231%" aria-hidden="true">02</span><span class="wnode" data-i="2" style="left:62.5000%;top:75.3846%"><svg aria-hidden="true"><use href="#l-users"/></svg></span><span class="wnum up" data-i="2" style="left:62.5000%;top:75.3846%" aria-hidden="true">03</span><span class="wnode" data-i="3" style="left:87.5000%;top:26.9231%"><svg aria-hidden="true"><use href="#l-pen"/></svg></span><span class="wnum dn" data-i="3" style="left:87.5000%;top:26.9231%" aria-hidden="true">04</span>
+        </div>
+        <ol class="flow-cols" id="flowCols">
+          <span class="rail" aria-hidden="true"><i id="railFill"></i></span>
+          <li class="fcol" data-i="0">
+            <span class="mnode" aria-hidden="true"><svg><use href="#l-calc"/></svg></span>
+            <div class="fbody">
+              <p class="fmeta"><span>Paso 1</span><span class="fdur">48 horas</span></p>
+              <h3>Tasación</h3>
+              <p class="fdesc">Visitamos la propiedad y te entregamos un valor con ventas cerradas comparables de la zona.</p>
+            </div>
+          </li>
+          <li class="fcol" data-i="1">
+            <span class="mnode" aria-hidden="true"><svg><use href="#l-camera"/></svg></span>
+            <div class="fbody">
+              <p class="fmeta"><span>Paso 2</span><span class="fdur">1 semana</span></p>
+              <h3>Ficha y fotografía</h3>
+              <p class="fdesc">Planos redibujados, fotografía de arquitectura y medición de asoleamiento en invierno.</p>
+            </div>
+          </li>
+          <li class="fcol" data-i="2">
+            <span class="mnode" aria-hidden="true"><svg><use href="#l-users"/></svg></span>
+            <div class="fbody">
+              <p class="fmeta"><span>Paso 3</span><span class="fdur">2 a 8 semanas</span></p>
+              <h3>Visitas acompañadas</h3>
+              <p class="fdesc">Filtramos interesados con preaprobación bancaria y vamos contigo a cada visita.</p>
+            </div>
+          </li>
+          <li class="fcol" data-i="3">
+            <span class="mnode" aria-hidden="true"><svg><use href="#l-pen"/></svg></span>
+            <div class="fbody">
+              <p class="fmeta"><span>Paso 4</span><span class="fdur">30 a 60 días</span></p>
+              <h3>Promesa y escritura</h3>
+              <p class="fdesc">Coordinamos promesa, escritura e inscripción en el Conservador de Bienes Raíces.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- ================= COMISIÓN ================= -->
+  <section class="block comision" id="comision" aria-label="Comisión">
+    <div class="wrap">
+      <div class="sell-cta" id="sellCta">
+        <p><strong>Comisión de 2 % + IVA, solo al escriturar.</strong><span>Si no vendemos, no pagas. La tasación inicial no tiene costo.</span></p>
+        <a class="btn btn-primary" href="#contacto" data-interest="Vender mi propiedad">Pedir tasación</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACTO ================= -->
+  <section class="block" id="contacto" aria-labelledby="contacto-title">
+    <div class="wrap contact">
+      <div class="contact-info" data-reveal>
+        <div>
+          <p class="eyebrow">Contacto</p>
+          <h2 id="contacto-title" style="margin-top:14px">Agenda una visita</h2>
+          <p style="color:var(--muted);margin-top:14px;max-width:44ch">Te respondemos dentro de un día hábil. Las visitas son de lunes a sábado, con luz de día.</p>
+        </div>
+        <div class="agent">
+          <div class="avatar" aria-hidden="true">CS</div>
+          <div><strong style="font-weight:550">Catalina Soto</strong><span class="mono">Corredora · Santiago oriente</span></div>
+        </div>
+        <dl class="dl">
+          <div><dt>Oficina</dt><dd>Av. Vitacura 3568, of. 402, Vitacura</dd></div>
+          <div><dt>Teléfono</dt><dd class="mono" style="font-size:.9375rem">+56 2 2940 1180</dd></div>
+          <div><dt>Correo</dt><dd>visitas@cumbrenorte.cl</dd></div>
+          <div><dt>Horario</dt><dd>Lun a vie 9:00–19:00 · sáb 10:00–14:00</dd></div>
+        </dl>
+      </div>
+
+      <form class="form" id="contactForm" novalidate aria-labelledby="contacto-title" data-reveal style="--d:.1s">
+        <div id="formFields" style="display:grid;gap:18px">
+          <div class="form-row">
+            <div class="field" id="f-name">
+              <label for="c-name">Nombre</label>
+              <input class="control" id="c-name" name="name" autocomplete="name" aria-describedby="c-name-err" required>
+              <span class="err" id="c-name-err">Escribe tu nombre para saber a quién responder.</span>
+            </div>
+            <div class="field" id="f-phone">
+              <label for="c-phone">Teléfono <span style="text-transform:none;letter-spacing:0">(opcional)</span></label>
+              <input class="control mono" id="c-phone" name="phone" type="tel" autocomplete="tel" placeholder="+56 9 1234 5678" aria-describedby="c-phone-err">
+              <span class="err" id="c-phone-err">Usa el formato +56 9 1234 5678.</span>
+            </div>
+          </div>
+          <div class="field" id="f-email">
+            <label for="c-email">Correo</label>
+            <input class="control" id="c-email" name="email" type="email" autocomplete="email" aria-describedby="c-email-err" required>
+            <span class="err" id="c-email-err">Revisa el correo: debe tener la forma nombre@dominio.cl.</span>
+          </div>
+          <div class="field">
+            <label for="c-interest">Me interesa</label>
+            <select class="control" id="c-interest" name="interest">
+              <option>Casa Los Trapenses</option>
+              <option>Casa El Peumo</option>
+              <option>Departamento Luis Pasteur</option>
+              <option>Departamento Parque Bicentenario</option>
+              <option>Casa Punta Cachagua</option>
+              <option>Vender mi propiedad</option>
+              <option>Otra consulta</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="c-msg">Mensaje <span style="text-transform:none;letter-spacing:0">(opcional)</span></label>
+            <textarea class="control" id="c-msg" name="message" placeholder="Días y horarios en que puedes visitar"></textarea>
+          </div>
+          <div class="form-foot">
+            <p class="hint">Sitio de demostración: este formulario no envía datos.</p>
+            <button class="btn btn-primary" type="submit">Enviar solicitud</button>
+          </div>
+        </div>
+        <div class="success" id="formSuccess" hidden tabindex="-1">
+          <span class="check"><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg></span>
+          <h3 id="successTitle">Solicitud lista</h3>
+          <p id="successText"></p>
+          <button class="btn btn-ghost" type="button" id="formReset" style="justify-self:start;margin-top:8px">Hacer otra consulta</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="#top" aria-label="Cumbre Norte Propiedades, volver arriba">
+          <svg aria-hidden="true"><use href="#logo"/></svg>
+          <span class="brand-name">Cumbre Norte<small>Propiedades</small></span>
+        </a>
+        <p>Corretaje de propiedades en Santiago oriente y el litoral central. Pocas propiedades, bien elegidas y bien documentadas.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+          <a href="https://www.whatsapp.com/" target="_blank" rel="noopener" aria-label="WhatsApp"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+        </div>
+      </div>
+      <nav class="foot-col" aria-label="Propiedades">
+        <h4>Propiedades</h4>
+        <a href="#propiedades" data-set-filter="casa">Casas</a>
+        <a href="#propiedades" data-set-filter="depto">Departamentos</a>
+        <a href="#ficha">Ficha destacada</a>
+      </nav>
+      <nav class="foot-col" aria-label="Comunas">
+        <h4>Comunas</h4>
+        <a href="#barrios">Vitacura</a>
+        <a href="#barrios">Lo Barnechea</a>
+        <a href="#barrios">Chicureo</a>
+        <a href="#barrios">Zapallar</a>
+      </nav>
+      <div class="foot-col wide">
+        <h4>Oficina</h4>
+        <span>Av. Vitacura 3568, of. 402<br>Vitacura, Santiago</span>
+        <span class="mono" style="font-size:.875rem">+56 2 2940 1180</span>
+        <a href="#contacto">Agendar visita</a>
+      </div>
+    </div>
+    <div class="foot-mark" id="footMark" aria-hidden="true"><span>Cumbre Norte</span></div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> Cumbre Norte Propiedades SpA</span>
+      <span>Marca, propiedades, valores y contactos ficticios para demostración.</span>
+      <span class="powered">Powered by <strong>Marcellus Anthonson Studio</strong></span>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const smooth = (a, b, v) => { const t = clamp((v - a) / (b - a)); return t * t * (3 - 2 * t); };
+
+
+  /* ---------- Header y menú ---------- */
+  const header = $('#siteHeader'), menuBtn = $('#menuBtn');
+  menuBtn.addEventListener('click', () => {
+    const open = header.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open);
+    menuBtn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  });
+  $$('#nav a').forEach(a => a.addEventListener('click', () => {
+    header.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); menuBtn.setAttribute('aria-label', 'Abrir menú');
+  }));
+
+  /* ---------- Hero: video por scroll (secuencia de cuadros en canvas) ----------
+     Línea de tiempo atada 1:1 al scroll, sin zonas muertas:
+     y = píxeles recorridos desde que el hero toca el borde superior.
+     El video avanza desde y = 0 hasta que el hero sale por completo de la pantalla. */
+  const hero = $('#hero'), stage = $('.hero-stage'), canvas = $('#heroCanvas'), ctx = canvas.getContext('2d');
+  const copy = $('#heroCopy');
+  const poster = $('.hero-poster'), band = $('.search-band'), phone = matchMedia('(max-width:600px)');
+  const FRAMES = 79;
+  const frames = new Array(FRAMES);
+  let loadedAny = false, lastF = -1;
+  if (reduce || !FRAMES) hero.classList.add('static');
+
+  function sizeCanvas() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.round(canvas.clientWidth * dpr);
+    canvas.height = Math.round(canvas.clientHeight * dpr);
+    lastF = -1;
+  }
+  const ok = img => img && img.complete && img.naturalWidth;
+  function nearest(i) {
+    if (ok(frames[i])) return frames[i];
+    for (let d = 1; d < FRAMES; d++) {
+      if (ok(frames[i - d])) return frames[i - d];
+      if (ok(frames[i + d])) return frames[i + d];
+    }
+    return null;
+  }
+  let imgTopPx = 0;                                    // en teléfonos, borde superior de la imagen dentro del hero
+  function blit(img, alpha) {
+    const dpr = canvas.width / (canvas.clientWidth || 1);
+    const top = imgTopPx * dpr, cw = canvas.width, ch = canvas.height - top, iw = img.naturalWidth, ih = img.naturalHeight;
+    const s = Math.max(cw / iw, ch / ih), w = iw * s, h = ih * s;
+    const fx = innerWidth < 900 ? .72 : .62;
+    ctx.globalAlpha = alpha;
+    ctx.drawImage(img, (cw - w) * fx, top + (ch - h) * (imgTopPx > 0 || phone.matches ? .6 : .5), w, h);
+  }
+  // f es un índice fraccionario: se funden los dos cuadros vecinos para que el movimiento sea continuo
+  function drawAt(f) {
+    const i = Math.floor(f), t = f - i;
+    const a = nearest(i); if (!a) return;
+    if (imgTopPx > 0) ctx.clearRect(0, 0, canvas.width, canvas.height);
+    blit(a, 1);
+    const b = t > 0.001 && i + 1 < FRAMES && ok(frames[i + 1]) ? frames[i + 1] : null;
+    if (b && b !== a) blit(b, t);
+    ctx.globalAlpha = 1;
+    lastF = f;
+  }
+  const lin = (a, b, v) => clamp((v - a) / (b - a));
+  let ticking = false;
+  function render() {
+    ticking = false;
+    if (hero.classList.contains('static')) return;
+    const vh = innerHeight, H = hero.offsetHeight;
+    const y = clamp(-hero.getBoundingClientRect().top, 0, H);   // 0 … H (H = el hero salió completo)
+    const p = y / H;
+    const f = p * (FRAMES - 1);
+    // Títulos: se mueven desde el primer píxel (0,45× el scroll) y terminan de desaparecer
+    // exactamente cuando el borde superior del buscador entra por abajo de la pantalla
+    const yEnter = Math.max(vh * 0.15, band.offsetTop - hero.offsetTop - vh);
+    // Teléfonos: la imagen conserva su tamaño de reposo (mitad inferior) y sube rígida, sin zoom,
+    // a la misma velocidad que el título y el subtítulo (0,45× el scroll) desde el primer píxel
+    const TEXT_RATE = 0.45;
+    let top = 0, shift = 0;
+    if (phone.matches) {
+      const sh = stage.clientHeight;
+      top = sh * 0.44;
+      shift = y * TEXT_RATE;
+      stage.style.setProperty('--imgtop', Math.max(0, top - shift).toFixed(1) + 'px');
+      stage.style.setProperty('--fade', (sh * 0.3).toFixed(1) + 'px');
+    } else { stage.style.removeProperty('--imgtop'); stage.style.removeProperty('--fade'); }
+    const moved = Math.abs(top - imgTopPx) > 0.4; imgTopPx = top;
+    if (loadedAny && (moved || Math.abs(f - lastF) > 0.002)) drawAt(f);
+
+    copy.style.transform = `translate3d(0,${(-y * TEXT_RATE).toFixed(1)}px,0)`;
+    copy.style.opacity = (1 - lin(0, yEnter, y)).toFixed(3);
+    copy.style.visibility = y >= yEnter ? 'hidden' : '';
+    // Imagen: leve acercamiento continuo hasta que el hero desaparece
+    if (phone.matches) {
+      canvas.style.transform = poster.style.transform = `translate3d(0,${(-shift).toFixed(1)}px,0)`;
+    } else {
+      const z = 1 + p * 0.06;
+      canvas.style.transform = poster.style.transform = `scale(${z.toFixed(4)})`;
+    }
+  }
+  function onScroll() {
+    header.classList.toggle('scrolled', scrollY > 24);
+    if (!ticking) { ticking = true; requestAnimationFrame(render); }
+  }
+  if (!hero.classList.contains('static')) {
+    sizeCanvas();
+    const pad = n => String(n).padStart(3, '0');
+    const order = [];
+    for (let k = 0; k < FRAMES; k += 8) order.push(k);
+    for (let k = 0; k < FRAMES; k++) if (k % 8) order.push(k);
+    order.forEach((k, n) => {
+      const img = new Image();
+      img.decoding = 'async';
+      img.onload = () => {
+        if (!loadedAny && k === 0) { loadedAny = true; canvas.classList.add('ready'); }
+        lastF = -1; if (!ticking) { ticking = true; requestAnimationFrame(render); }
+      };
+      frames[k] = img;
+      setTimeout(() => { img.src = `frames/f${pad(k + 1)}.webp`; }, n < 12 ? 0 : 60 + n * 8);
+    });
+    addEventListener('resize', () => { sizeCanvas(); render(); });
+  }
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ---------- Revelado por scroll ---------- */
+  const io = 'IntersectionObserver' in window && !reduce ? new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.remove('pre'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: .08 }) : null;
+  function arm(el) {
+    if (!io || !el) return;
+    if (el.getBoundingClientRect().top > innerHeight * .92) { el.classList.add('pre'); io.observe(el); }
+  }
+  $$('[data-reveal]').forEach(arm);
+  arm($('#marketChart'));
+
+  /* ---------- Proceso: el recorrido se dibuja atado al scroll ---------- */
+  (() => {
+    const flow = $('#flow'), svgF = $('#flowSvg'), ink = $('.f-ink', svgF), glow = $('.f-glow', svgF), head = $('.f-head', svgF);
+    const wnodes = $$('.wnode', flow), wnums = $$('.wnum', flow), fcols = $$('.fcol', flow), wave = $('.flow-wave', flow);
+    const railFill = $('#railFill'), colsEl = $('#flowCols'), scene = $('#vender'), pin = $('.vender-pin');
+    const len = ink.getTotalLength();
+    const NX = [150, 450, 750, 1050];
+    // longitud del recorrido en la que se alcanza cada nodo (búsqueda binaria sobre x)
+    const at = NX.map(x => { let lo = 0, hi = len; for (let k = 0; k < 30; k++) { const mid = (lo + hi) / 2; if (ink.getPointAtLength(mid).x < x) lo = mid; else hi = mid; } return lo / len; });
+    let tick = false;
+    function paint() {
+      tick = false;
+      const vh = innerHeight;
+      if (getComputedStyle(wave).display !== 'none') {
+        const r = wave.getBoundingClientRect();
+        // arranca en el píxel exacto en que el texto de los cuatro pasos queda 100 % visible
+        // (borde inferior de la última línea de texto + 16 px de aire) y se completa en 0,4 pantallas de scroll
+        // se mide la lista (que no se anima) para que el leve ascenso de cada paso al activarse no mueva el punto de partida
+        let p;
+        if (getComputedStyle(pin).position === 'sticky') {
+          // escena fijada: avance según el recorrido mientras el contenido está quieto en pantalla
+          const top = pin.getBoundingClientRect().top - scene.getBoundingClientRect().top;   // cuánto lleva fijada
+          const span = scene.offsetHeight - pin.offsetHeight;                                 // recorrido total fijado
+          const raw = span > 0 ? top / span : 1;
+          p = reduce ? 1 : clamp((raw - 0.08) / 0.8);    // 8 % de pausa al entrar, 12 % de pausa al final
+        } else {
+          const textBottom = colsEl.getBoundingClientRect().bottom + 16;
+          p = reduce ? 1 : clamp((vh - textBottom) / (vh * 0.4));
+        }
+        ink.style.strokeDashoffset = glow.style.strokeDashoffset = (1 - p).toFixed(4);
+        const pt = ink.getPointAtLength(len * p);
+        head.setAttribute('cx', pt.x.toFixed(1)); head.setAttribute('cy', pt.y.toFixed(1));
+        flow.classList.toggle('drawing', p > 0.002 && p < 0.998);
+        at.forEach((f, i) => {
+          const on = p >= f - 0.004;
+          wnodes[i].classList.toggle('on', on); wnums[i].classList.toggle('on', on); fcols[i].classList.toggle('on', on);
+        });
+      } else {
+        const r = colsEl.getBoundingClientRect(), line = vh * 0.62;
+        const p = reduce ? 1 : clamp((line - r.top) / r.height);
+        railFill.style.transform = `scaleY(${p.toFixed(4)})`;
+        fcols.forEach(c => c.classList.toggle('on', reduce || c.getBoundingClientRect().top < line));
+      }
+    }
+    const req = () => { if (!tick) { tick = true; requestAnimationFrame(paint); } };
+    addEventListener('scroll', req, { passive: true });
+    addEventListener('resize', req);
+    paint();
+  })();
+
+  /* ---------- Comisión: entrada única al aparecer + brillo interior atado al scroll ---------- */
+  (() => {
+    const cta = $('#sellCta'); if (!cta) return;
+    let tick = false;
+    function paint() {
+      tick = false;
+      const vh = innerHeight, r = cta.getBoundingClientRect();
+      // el brillo recorre el banner de izquierda a derecha mientras sigue el scroll
+      const g = reduce ? .5 : clamp((vh - r.top) / (vh + r.height));
+      cta.style.setProperty('--gx', (10 + g * 80).toFixed(1) + '%');
+    }
+    const req = () => { if (!tick) { tick = true; requestAnimationFrame(paint); } };
+    addEventListener('scroll', req, { passive: true });
+    addEventListener('resize', req);
+    paint();
+    arm(cta);
+  })();
+
+  /* ---------- Propiedades ---------- */
+  const cards = $$('#cards .card'), count = $('#count'), typeFilter = $('#typeFilter');
+  function applyFilter({ type = 'todas', comuna = '', max = Infinity } = {}) {
+    const visible = [];
+    cards.forEach(c => {
+      const pass = (type === 'todas' || c.dataset.type === type) && (!comuna || c.dataset.comuna === comuna) && Number(c.dataset.uf) <= max;
+      c.hidden = !pass; c.classList.remove('w5', 'w7', 'w12');
+      if (pass) visible.push(c);
+    });
+    visible.forEach((c, i) => {
+      if (visible.length === 1) c.classList.add('w12');
+      else c.classList.add((i % 4 === 0 || i % 4 === 3) ? 'w7' : 'w5');
+    });
+    count.textContent = visible.length === 1 ? '1 propiedad' : `${visible.length} propiedades`;
+    return visible.length;
+  }
+  function setTypeButton(type) { $$('button', typeFilter).forEach(x => x.setAttribute('aria-pressed', String(x.dataset.filter === type))); }
+  function filterAndShow(opts) { const n = applyFilter(opts); cards.forEach(c => c.classList.remove('pre')); return n; }
+  $$('button', typeFilter).forEach(b => b.addEventListener('click', () => { setTypeButton(b.dataset.filter); filterAndShow({ type: b.dataset.filter }); }));
+  applyFilter();
+  $$('[data-set-filter]').forEach(a => a.addEventListener('click', () => { setTypeButton(a.dataset.setFilter); filterAndShow({ type: a.dataset.setFilter }); }));
+  $$('.fav').forEach(b => b.addEventListener('click', () => {
+    b.setAttribute('aria-pressed', String(b.getAttribute('aria-pressed') !== 'true'));
+    b.classList.remove('pop'); void b.offsetWidth; b.classList.add('pop');
+  }));
+
+  /* ---------- Buscador ---------- */
+  const search = $('#search'), status = $('#searchStatus');
+  let op = 'venta';
+  $$('.segmented button', search).forEach(b => b.addEventListener('click', () => {
+    $$('.segmented button', search).forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    op = b.dataset.op; status.textContent = '';
+  }));
+  const maxInput = $('#s-max');
+  maxInput.addEventListener('input', () => {
+    const d = maxInput.value.replace(/\D/g, '').slice(0, 6);
+    maxInput.value = d ? Number(d).toLocaleString('es-CL') : '';
+  });
+  search.addEventListener('submit', e => {
+    e.preventDefault();
+    if (op === 'arriendo') { status.textContent = 'Por ahora no tenemos propiedades en arriendo. Escríbenos y te avisamos cuando publiquemos una.'; return; }
+    const type = $('#s-tipo').value, comuna = $('#s-comuna').value;
+    const raw = maxInput.value.replace(/\D/g, ''), max = raw ? Number(raw) : Infinity;
+    setTypeButton(type);
+    const n = filterAndShow({ type, comuna, max });
+    if (n === 0) { status.textContent = 'Ninguna propiedad cumple esos filtros. Prueba con otra comuna o un monto mayor.'; filterAndShow({ type }); return; }
+    status.textContent = n === 1 ? 'Encontramos 1 propiedad.' : `Encontramos ${n} propiedades.`;
+    $('#propiedades').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+  });
+
+  /* ---------- Galería ---------- */
+  const main = $('#galleryMain');
+  $$('.thumb').forEach(t => t.addEventListener('click', () => {
+    $$('.thumb').forEach(x => x.setAttribute('aria-pressed', String(x === t)));
+    main.style.opacity = '0';
+    setTimeout(() => { main.src = t.dataset.src; main.alt = t.dataset.alt; main.style.opacity = '1'; }, 180);
+  }));
+
+  /* ---------- Plano arquitectónico (metros → px) ---------- */
+  const NS = 'http://www.w3.org/2000/svg', svg = $('#planSvg');
+  const S = 30, OX = 72, OY = 160, X = m => OX + m * S, Y = m => OY + m * S;
+  const EXT = 9, INT = 4.5;
+  const g = cls => { const e = document.createElementNS(NS, 'g'); if (cls) e.setAttribute('class', cls); svg.appendChild(e); return e; };
+  const el = (parent, tag, attrs, text) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; parent.appendChild(e); return e; };
+  const fmt = n => n.toFixed(2).replace('.', ',');
+  const W = 24.6, H = 10.1;
+
+  // Ejes estructurales
+  const ax = [0, 10.4, 14.8, 21.0, 24.6], ay = [0, 6.6, H];
+  const gAxes = g('late');
+  ax.forEach((m, k) => {
+    el(gAxes, 'line', { class: 'axis', x1: X(m), y1: 34, x2: X(m), y2: Y(H) + 14 });
+    const b = el(gAxes, 'g', { class: 'bubble' }); el(b, 'circle', { cx: X(m), cy: 24, r: 10 }); el(b, 'text', { x: X(m), y: 24 }, 'ABCDE'[k]);
+  });
+  ay.forEach((m, k) => {
+    el(gAxes, 'line', { class: 'axis', x1: 34, y1: Y(m), x2: X(W) + 14, y2: Y(m) });
+    const b = el(gAxes, 'g', { class: 'bubble' }); el(b, 'circle', { cx: 24, cy: Y(m), r: 10 }); el(b, 'text', { x: 24, y: Y(m) }, String(k + 1));
+  });
+
+  // Terraza cubierta al norte, con entablado y pilares
+  const gTer = g('late');
+  for (let m = 0.3; m < 10.4; m += 0.3) el(gTer, 'line', { class: 'deck', x1: X(m), y1: Y(-3.2), x2: X(m), y2: Y(0) - EXT / 2 });
+  el(gTer, 'rect', { class: 'terr', x: X(0), y: Y(-3.2), width: 10.4 * S, height: 3.2 * S });
+  [0.15, 5.2, 10.25].forEach(m => el(gTer, 'rect', { x: X(m) - 4, y: Y(-3.05) - 4, width: 8, height: 8, fill: 'var(--ink)' }));
+
+  // Recintos
+  const rooms = [
+    { n: 'Living-comedor', x: 0, y: 0, w: 10.4, h: 6.6, lx: 5.2, ly: 5.55 },
+    { n: 'Cocina', x: 10.4, y: 0, w: 4.4, h: 4.4, lx: 12.6, ly: 3.75 },
+    { n: 'Lavadero', x: 10.4, y: 4.4, w: 4.4, h: 2.2, lx: 12.0, ly: 5.75, small: true },
+    { n: 'Hall · acceso', x: 10.4, y: 6.6, w: 4.4, h: 3.5, lx: 11.75, ly: 7.7, small: true },
+    { n: 'Estar', x: 0, y: 6.6, w: 5.2, h: 3.5, lx: 2.6, ly: 8.2 },
+    { n: 'Baño', x: 5.2, y: 6.6, w: 2.2, h: 3.5, lx: 6.3, ly: 8.3, small: true },
+    { n: 'Bodega', x: 7.4, y: 6.6, w: 3.0, h: 3.5, lx: 9.1, ly: 8.5, small: true },
+    { n: 'Suite principal', x: 14.8, y: 0, w: 6.2, h: 4.6, lx: 17.9, ly: 4.0 },
+    { n: 'Walk-in', x: 21.0, y: 0, w: 3.6, h: 2.4, lx: 22.8, ly: 1.25, small: true },
+    { n: 'Baño suite', x: 21.0, y: 2.4, w: 3.6, h: 2.2, lx: 22.1, ly: 3.55, small: true },
+    { n: 'Circulación', x: 14.8, y: 4.6, w: 9.8, h: 1.4, lx: 19.7, ly: 5.42, noArea: true, small: true },
+    { n: 'Dormitorio 2', x: 14.8, y: 6.0, w: 4.4, h: 4.1, lx: 18.0, ly: 7.0, small: true },
+    { n: 'Baño 2', x: 19.2, y: 6.0, w: 2.2, h: 4.1, lx: 20.3, ly: 7.6, small: true },
+    { n: 'Dormitorio 3', x: 21.4, y: 6.0, w: 3.2, h: 4.1, lx: 23.0, ly: 7.0, small: true }
+  ];
+  const gHot = g();
+  rooms.forEach(r => {
+    r.hit = el(gHot, 'rect', { class: 'room-hit', x: X(r.x), y: Y(r.y), width: r.w * S, height: r.h * S });
+    r.hot = el(gHot, 'rect', { class: 'hot', x: X(r.x), y: Y(r.y), width: r.w * S, height: r.h * S });
+  });
+
+  // Mobiliario
+  const gF = g('late');
+  const R = (x, y, w, h, rx = 0) => el(gF, 'rect', { class: 'furn', x: X(x), y: Y(y), width: w * S, height: h * S, rx: rx * S });
+  const C = (x, y, r) => el(gF, 'circle', { class: 'furn', cx: X(x), cy: Y(y), r: r * S });
+  const L = (x1, y1, x2, y2) => el(gF, 'line', { class: 'furn', x1: X(x1), y1: Y(y1), x2: X(x2), y2: Y(y2) });
+  const E = (x, y) => el(gF, 'ellipse', { class: 'furn', cx: X(x), cy: Y(y), rx: .2 * S, ry: .28 * S });
+  el(gF, 'rect', { class: 'furn', x: X(0.9), y: Y(1.5), width: 4.6 * S, height: 3.4 * S, 'stroke-dasharray': '3 3' });
+  R(1.3, 3.75, 3.6, 0.85, .1); R(1.3, 4.35, 3.6, 0.25); R(2.2, 2.4, 1.8, 0.8, .05);
+  R(1.25, 1.85, 0.8, 0.8, .1); R(4.15, 1.85, 0.8, 0.8, .1);
+  R(6.3, 2.0, 2.7, 1.1, .05); [6.8, 7.65, 8.5].forEach(x => { C(x, 1.7, .22); C(x, 3.4, .22); });
+  R(10.6, 0.2, 4.0, 0.65); R(11.3, 1.8, 2.6, 1.0); C(11.2, 0.52, .16); R(13.0, 0.3, 0.9, 0.45);
+  R(10.6, 4.6, 1.3, 0.65); R(13.3, 4.6, 0.65, 0.65); R(14.0, 4.6, 0.65, 0.65);
+  for (let m = 6.85; m < 9.9; m += 0.28) L(13.25, m, 14.65, m);
+  R(13.25, 6.85, 1.4, 3.08);
+  el(gF, 'path', { class: 'furn', d: `M${X(13.95)} ${Y(9.6)} L${X(13.95)} ${Y(7.15)} M${X(13.95) - 4} ${Y(7.15) + 7} L${X(13.95)} ${Y(7.15)} L${X(13.95) + 4} ${Y(7.15) + 7}` });
+  R(16.6, 0.9, 2.2, 2.3, .05); R(16.75, 1.0, 0.85, 0.4, .1); R(17.8, 1.0, 0.85, 0.4, .1); R(16.05, 1.0, 0.45, 0.45); R(18.9, 1.0, 0.45, 0.45);
+  R(21.2, 0.2, 3.2, 0.55); R(21.2, 1.65, 3.2, 0.55);
+  R(23.1, 2.6, 1.3, 1.8, .3); E(21.45, 4.15); R(21.15, 2.55, 1.0, 0.45);
+  R(15.4, 7.7, 1.5, 2.2, .05); R(15.55, 7.8, 1.2, 0.4, .1); R(17.9, 9.3, 1.1, 0.6);
+  R(19.35, 8.6, 1.9, 1.35); L(19.35, 8.6, 21.25, 9.95); L(21.25, 8.6, 19.35, 9.95); E(19.7, 6.55); R(20.35, 6.2, 0.9, 0.45);
+  R(22.7, 7.9, 1.5, 2.0, .05); R(22.85, 8.0, 1.2, 0.4, .1);
+  E(6.3, 9.55); R(5.4, 6.85, 0.45, 0.9);
+  for (let m = 7.0; m < 9.9; m += 0.5) L(7.55, m, 7.95, m);
+  R(0.3, 9.25, 1.8, 0.6);
+
+  // Muros + vanos
+  const gW = g();
+  const walls = [
+    ['ext', 0, 0, W, 0], ['ext', 0, H, W, H], ['ext', 0, 0, 0, H], ['ext', W, 0, W, H],
+    ['int', 10.4, 0, 10.4, 0.6], ['int', 10.4, 6.6, 10.4, H], ['int', 0, 6.6, 10.4, 6.6],
+    ['int', 5.2, 6.6, 5.2, H], ['int', 7.4, 6.6, 7.4, H], ['int', 10.4, 4.4, 14.8, 4.4], ['int', 12.4, 6.6, 14.8, 6.6],
+    ['int', 14.8, 0, 14.8, 4.6], ['int', 14.8, 6.0, 14.8, H], ['int', 14.8, 4.6, W, 4.6], ['int', 14.8, 6.0, W, 6.0],
+    ['int', 21.0, 0, 21.0, 4.6], ['int', 21.0, 2.4, W, 2.4], ['int', 19.2, 6.0, 19.2, H], ['int', 21.4, 6.0, 21.4, H]
+  ];
+  walls.forEach(([t, x1, y1, x2, y2]) => el(gW, 'line', { class: `wall ${t} draw`, x1: X(x1), y1: Y(y1), x2: X(x2), y2: Y(y2), pathLength: 1 }));
+
+  const gO = g('late');
+  const openings = [
+    ['win', 'h', 0, 0.8, 9.6, EXT], ['win', 'h', 0, 11.2, 14.0, EXT], ['win', 'h', 0, 15.6, 20.2, EXT],
+    ['win', 'h', H, 1.2, 4.0, EXT], ['win', 'h', H, 15.6, 18.4, EXT], ['win', 'h', H, 22.0, 24.0, EXT],
+    ['win', 'v', 0, 1.0, 5.6, EXT], ['win', 'v', W, 0.6, 2.0, EXT], ['win', 'v', W, 6.8, 9.4, EXT],
+    ['door', 'h', H, 11.0, 12.2, EXT, -1],
+    ['door', 'h', 6.6, 3.8, 4.6, INT, 1], ['door', 'h', 6.6, 6.0, 6.8, INT, 1], ['door', 'h', 6.6, 8.6, 9.4, INT, 1],
+    ['door', 'h', 4.4, 11.6, 12.4, INT, 1],
+    ['door', 'h', 4.6, 15.4, 16.2, INT, -1], ['door', 'h', 4.6, 22.6, 23.4, INT, -1],
+    ['door', 'v', 21.0, 0.8, 1.6, INT, -1],
+    ['door', 'h', 6.0, 15.4, 16.2, INT, 1], ['door', 'h', 6.0, 19.6, 20.4, INT, 1], ['door', 'h', 6.0, 21.8, 22.6, INT, 1]
+  ];
+  openings.forEach(([type, o, at, a, b, t, dir]) => {
+    const half = t / 2 + 0.6, w = (b - a) * S;
+    if (o === 'h') {
+      el(gW, 'rect', { class: 'cut', x: X(a), y: Y(at) - half, width: w, height: half * 2 });
+      [a, b].forEach(m => el(gO, 'line', { class: 'thin', x1: X(m), y1: Y(at) - t / 2, x2: X(m), y2: Y(at) + t / 2 }));
+      if (type === 'win') [-t / 2, 0, t / 2].forEach(d => el(gO, 'line', { class: d ? 'thin' : 'glass', x1: X(a), y1: Y(at) + d, x2: X(b), y2: Y(at) + d }));
+      else {
+        const hx = X(a), hy = Y(at), ey = hy + dir * w;
+        el(gO, 'line', { class: 'door', x1: hx, y1: hy, x2: hx, y2: ey });
+        el(gO, 'path', { class: 'swing', d: `M${hx} ${ey} A${w} ${w} 0 0 ${dir > 0 ? 0 : 1} ${X(b)} ${hy}` });
+      }
+    } else {
+      el(gW, 'rect', { class: 'cut', x: X(at) - half, y: Y(a), width: half * 2, height: w });
+      [a, b].forEach(m => el(gO, 'line', { class: 'thin', x1: X(at) - t / 2, y1: Y(m), x2: X(at) + t / 2, y2: Y(m) }));
+      if (type === 'win') [-t / 2, 0, t / 2].forEach(d => el(gO, 'line', { class: d ? 'thin' : 'glass', x1: X(at) + d, y1: Y(a), x2: X(at) + d, y2: Y(b) }));
+      else {
+        const hx = X(at), hy = Y(a), ex = hx + dir * w;
+        el(gO, 'line', { class: 'door', x1: hx, y1: hy, x2: ex, y2: hy });
+        el(gO, 'path', { class: 'swing', d: `M${ex} ${hy} A${w} ${w} 0 0 ${dir > 0 ? 1 : 0} ${hx} ${Y(b)}` });
+      }
+    }
+  });
+
+  // Rótulos
+  const gL = g('late');
+  rooms.forEach(r => {
+    el(gL, 'text', { class: 'rn', x: X(r.lx), y: Y(r.ly), style: r.small ? 'font-size:7.6px' : '' }, r.n);
+    if (!r.noArea) el(gL, 'text', { class: 'ra', x: X(r.lx), y: Y(r.ly) + 11 }, `${fmt(r.w * r.h)} m²`);
+  });
+  el(gL, 'text', { class: 'rn', x: X(5.2), y: Y(-1.7) }, 'Terraza cubierta');
+  el(gL, 'text', { class: 'ra', x: X(5.2), y: Y(-1.7) + 11 }, `${fmt(10.4 * 3.2)} m²`);
+  el(gL, 'text', { class: 'ra', x: X(11.6), y: Y(H) + 22 }, 'ACCESO ▲');
+
+  // Cotas
+  const gD = g('late');
+  const tick = (x, y) => el(gD, 'line', { class: 'dim', x1: x - 4, y1: y + 4, x2: x + 4, y2: y - 4 });
+  const yc1 = Y(H) + 46, yc2 = Y(H) + 74;
+  ax.forEach(m => { el(gD, 'line', { class: 'dim', x1: X(m), y1: Y(H) + 30, x2: X(m), y2: yc2 + 6 }); tick(X(m), yc1); });
+  el(gD, 'line', { class: 'dim', x1: X(0) - 6, y1: yc1, x2: X(W) + 6, y2: yc1 });
+  ax.slice(1).forEach((m, k) => el(gD, 'text', { class: 'dim-t', x: (X(ax[k]) + X(m)) / 2, y: yc1 - 5 }, fmt(m - ax[k])));
+  el(gD, 'line', { class: 'dim', x1: X(0) - 6, y1: yc2, x2: X(W) + 6, y2: yc2 }); tick(X(0), yc2); tick(X(W), yc2);
+  el(gD, 'text', { class: 'dim-t', x: X(W / 2), y: yc2 - 5 }, `${fmt(W)} m`);
+  const xv = X(W) + 46, vy = [-3.2, 0, 6.6, H];
+  vy.forEach(m => { el(gD, 'line', { class: 'dim', x1: X(W) + 30, y1: Y(m), x2: xv + 6, y2: Y(m) }); tick(xv, Y(m)); });
+  el(gD, 'line', { class: 'dim', x1: xv, y1: Y(-3.2) - 6, x2: xv, y2: Y(H) + 6 });
+  vy.slice(1).forEach((m, k) => { const cy = (Y(vy[k]) + Y(m)) / 2; el(gD, 'text', { class: 'dim-t', x: xv + 13, y: cy, transform: `rotate(-90 ${xv + 13} ${cy})` }, fmt(m - vy[k])); });
+
+  // Norte, escala gráfica y viñeta
+  const gT = g('late');
+  const ny = Y(H) + 118;
+  const na = el(gT, 'g', { transform: `translate(${X(0) + 18} ${ny}) rotate(35)` });
+  el(na, 'circle', { cx: 0, cy: 0, r: 16, fill: 'none', stroke: 'var(--ink)', 'stroke-width': .8 });
+  el(na, 'path', { d: 'M0 -14 L6 8 L0 4 L-6 8 Z', class: 'acc' });
+  el(gT, 'text', { class: 'dim-t', x: X(0) + 18, y: ny + 30 }, 'N');
+  const u = S * .667, sx = X(0) + 56, sy = ny - 4;
+  [[0, 1, true], [1, 2, false], [2, 5, true]].forEach(([a, b, f]) => el(gT, 'rect', { x: sx + a * u, y: sy, width: (b - a) * u, height: 6, fill: f ? 'var(--ink)' : 'none', stroke: 'var(--ink)', 'stroke-width': .8 }));
+  [0, 1, 2, 5].forEach(m => el(gT, 'text', { class: 'dim-t', x: sx + m * u, y: sy + 18 }, String(m)));
+  el(gT, 'text', { class: 'dim-t', x: sx + 5 * u + 14, y: sy + 18 }, 'm');
+  const tb = el(gT, 'g', { class: 'tb' }), tx = 556, ty = ny - 22;
+  el(tb, 'rect', { x: tx, y: ty, width: 300, height: 52 });
+  el(tb, 'line', { x1: tx, y1: ty + 30, x2: tx + 300, y2: ty + 30, stroke: 'var(--ink)', 'stroke-width': .8 });
+  el(tb, 'line', { x1: tx + 210, y1: ty, x2: tx + 210, y2: ty + 52, stroke: 'var(--ink)', 'stroke-width': .8 });
+  el(tb, 'text', { class: 'big', x: tx + 10, y: ty + 20 }, 'Casa Los Trapenses');
+  el(tb, 'text', { x: tx + 10, y: ty + 44 }, 'PLANTA NIVEL 1 · ESC. 1:150');
+  el(tb, 'text', { x: tx + 220, y: ty + 20 }, 'LÁM. A-101');
+  el(tb, 'text', { x: tx + 220, y: ty + 44 }, 'NOV 2026');
+
+  // Leyenda interactiva (resalta el recinto en el plano)
+  const legend = $('#roomLegend');
+  rooms.filter(r => !r.noArea).forEach(r => {
+    const li = document.createElement('li');
+    const a = document.createElement('span'), b = document.createElement('span');
+    a.textContent = r.n; b.textContent = `${fmt(r.w * r.h)} m²`; li.append(a, b);
+    const on = () => { r.hot.classList.add('show'); li.classList.add('on'); };
+    const off = () => { r.hot.classList.remove('show'); li.classList.remove('on'); };
+    li.addEventListener('mouseenter', on); li.addEventListener('mouseleave', off);
+    r.hit.addEventListener('mouseenter', on); r.hit.addEventListener('mouseleave', off);
+    legend.appendChild(li);
+  });
+  // Encuadre exacto: el viewBox se ajusta al dibujo real con el mismo margen en los cuatro lados
+  const bb = svg.getBBox(), M = 18;
+  svg.setAttribute('viewBox', `${(bb.x - M).toFixed(1)} ${(bb.y - M).toFixed(1)} ${(bb.width + M * 2).toFixed(1)} ${(bb.height + M * 2).toFixed(1)}`);
+  arm($('#sheetPlan'));
+
+  /* ---------- Sol del 21 de junio en movimiento ---------- */
+  const arc = $('#winterArc'), dot = $('#sunDot'), halo = $('#sunHalo'), sunTime = $('#sunTime');
+  const len = arc.getTotalLength();
+  function placeSun(t) {
+    const pt = arc.getPointAtLength(len * t);
+    dot.setAttribute('cx', pt.x); dot.setAttribute('cy', pt.y);
+    halo.setAttribute('cx', pt.x); halo.setAttribute('cy', pt.y);
+    const mins = Math.round(9 * 60 + 50 + t * 7 * 60);
+    sunTime.textContent = `21 jun · ${Math.floor(mins / 60)}:${String(mins % 60).padStart(2, '0')}`;
+  }
+  placeSun(.5);
+  if (!reduce && 'IntersectionObserver' in window) {
+    let visible = false, t0 = 0;
+    const loop = now => {
+      if (!visible) return;
+      placeSun(.5 - .5 * Math.cos(((now - t0) / 7000) * Math.PI * 2));
+      requestAnimationFrame(loop);
+    };
+    new IntersectionObserver(es => {
+      const was = visible; visible = es[0].isIntersecting;
+      if (visible && !was) { t0 = performance.now() - 3500; requestAnimationFrame(loop); }
+    }).observe(arc.ownerSVGElement);
+  }
+
+  /* ---------- Formulario ---------- */
+  const interest = $('#c-interest');
+  $$('[data-interest]').forEach(a => a.addEventListener('click', () => { interest.value = a.dataset.interest; }));
+  const form = $('#contactForm'), fields = $('#formFields'), success = $('#formSuccess');
+  const rules = {
+    'f-name': v => v.trim().length >= 2,
+    'f-email': v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()),
+    'f-phone': v => !v.trim() || /^\+?56\s?[29]\s?\d{4}\s?\d{4}$/.test(v.trim().replace(/[-.]/g, ' ').replace(/\s+/g, ' '))
+  };
+  function check(id) {
+    const wrap = $('#' + id), input = $('input', wrap), pass = rules[id](input.value);
+    wrap.classList.toggle('invalid', !pass); input.setAttribute('aria-invalid', String(!pass));
+    return pass;
+  }
+  Object.keys(rules).forEach(id => {
+    const input = $('input', $('#' + id));
+    input.addEventListener('blur', () => { if (input.value) check(id); });
+    input.addEventListener('input', () => { if ($('#' + id).classList.contains('invalid')) check(id); });
+  });
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (Object.keys(rules).map(check).includes(false)) { const f = $('.field.invalid input', form); f && f.focus(); return; }
+    const name = $('#c-name').value.trim().split(/\s+/)[0];
+    $('#successTitle').textContent = `Listo, ${name}.`;
+    $('#successText').textContent = `Registramos tu interés en «${interest.value}». En el sitio real, Catalina te escribiría a ${$('#c-email').value.trim()} dentro de un día hábil.`;
+    fields.hidden = true; success.hidden = false; success.focus();
+  });
+  $('#formReset').addEventListener('click', () => {
+    form.reset(); $$('.field', form).forEach(f => f.classList.remove('invalid'));
+    success.hidden = true; fields.hidden = false; $('#c-name').focus();
+  });
+
+  /* ---------- Marca del footer ajustada al ancho exacto ---------- */
+  const mark = $('#footMark'), markSpan = $('span', mark);
+  function fitMark() {
+    mark.style.fontSize = '100px';
+    const w = markSpan.getBoundingClientRect().width;
+    if (w) mark.style.fontSize = `${(mark.clientWidth / w) * 100 * 0.99}px`;
+  }
+  fitMark();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitMark);
+  addEventListener('resize', fitMark);
+
+  $('#year').textContent = new Date().getFullYear();
+})();
+</script>
+</body></html>
